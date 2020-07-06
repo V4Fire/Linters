@@ -31,6 +31,8 @@
     "eslint-plugin-enchanted-curly": "1.0.1",
     "eslint-plugin-import": "2.22.0",
     "prettier": "^2.0.5",
+    "stlint": "^1.0.62",
+    "stlint-v4fire": "^1.0.37",
     "tslint": "^6.1.2"
   }
 }
