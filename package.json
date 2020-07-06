@@ -1,0 +1,36 @@
+{
+  "name": "@v4fire/linters",
+  "description": "Configuration of linters to check V4 projects",
+  "homepage": "https://github.com/V4Fire/Linters#readme",
+  "typings": "index.d.ts",
+  "license": "MIT",
+  "version": "1.0.0",
+  "author": {
+    "name": "kobezzza",
+    "email": "kobezzza@gmail.com",
+    "url": "https://github.com/kobezzza"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V4Fire/Linters.git"
+  },
+  "bugs": {
+    "url": "https://github.com/V4Fire/Linters/issues"
+  },
+  "keywords": [
+    "V4Fire",
+    "Configuration",
+    "Linters"
+  ],
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "@v4fire/typescript-check": "^1.1.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.4.0",
+    "eslint-plugin-enchanted-curly": "1.0.1",
+    "eslint-plugin-import": "2.22.0",
+    "prettier": "^2.0.5",
+    "tslint": "^6.1.2"
+  }
+}
