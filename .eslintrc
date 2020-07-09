@@ -622,6 +622,16 @@
     },
 
     {
+      "files": [
+        "./src/entries/**/*.js"
+      ],
+
+      "rules": {
+        "import/no-relative-parent-imports": "off"
+      }
+    },
+
+    {
       "files": ["*.ts", "*.tsx"],
       "parser": "@typescript-eslint/parser",
 
