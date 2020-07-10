@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.2.1 (2020-07-10)
+
+#### :bug: Bug Fix
+
+* Fixed the version of @typescript-eslint/eslint-plugin@3.5.0, @typescript-eslint/parser@3.5.0
+
 ## v1.2.0 (2020-07-10)
 
 #### :rocket: New Feature
