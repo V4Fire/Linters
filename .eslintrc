@@ -445,7 +445,7 @@
     // Best practices
 
     "no-magic-numbers": "off",
-    "no-sequences": "error",
+    "no-sequences": "off",
 
     "no-prototype-builtins": "off",
     "no-mixed-operators": "off",
