@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.3.0 (2020-07-10)
+
+#### :rocket: New Feature
+
+* `@typescript-eslint/require-array-sort-compare` -> `["error", {"ignoreStringArrays": true}]`
+
 ## v1.2.1 (2020-07-10)
 
 #### :bug: Bug Fix
