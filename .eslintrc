@@ -364,7 +364,7 @@
     "array-callback-return": "error",
     "no-confusing-arrow": "off",
 
-    "implicit-arrow-linebreak": "error",
+    "implicit-arrow-linebreak": "off",
 
     // Classes
 
@@ -482,13 +482,7 @@
     "quote-props": ["error", "as-needed", {"keywords": false, "numbers": false}],
     "jsx-quotes": "error",
 
-    "no-extra-parens": ["error", "all", {
-      "conditionalAssign": true,
-      "nestedBinaryExpressions": true,
-      "ignoreJSX": "all",
-      "enforceForSequenceExpressions": true,
-      "enforceForNewInMemberExpressions": true
-    }],
+    "no-extra-parens": "off",
 
     "init-declarations": "off",
 
