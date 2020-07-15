@@ -17,14 +17,6 @@
     "import"
   ],
 
-  "settings": {
-    "import/resolver": {
-      "typescript": {
-        "alwaysTryTypes": true
-      }
-    }
-  },
-
   "rules": {
     // ES spec ESLint rules
     "strict": ["error", "global"],
@@ -637,6 +629,14 @@
         "project": "tsconfig.json",
         "tsconfigRootDir": ".",
         "sourceType": "module"
+      },
+
+      "settings": {
+        "import/resolver": {
+          "typescript": {
+            "alwaysTryTypes": true
+          }
+        }
       },
 
       "rules": {
