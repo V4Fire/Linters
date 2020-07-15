@@ -546,7 +546,7 @@
     "import/no-cycle": "warn",
 
     "import/no-absolute-path": "error",
-    "import/no-relative-parent-imports": "error",
+    "import/no-relative-parent-imports": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-useless-path-segments": "error",
     "import/no-self-import": "error",
@@ -626,16 +626,6 @@
       "rules": {
         "import/no-nodejs-modules": "off",
         "import/order": "off"
-      }
-    },
-
-    {
-      "files": [
-        "./src/entries/**/*.js"
-      ],
-
-      "rules": {
-        "import/no-relative-parent-imports": "off"
       }
     },
 
