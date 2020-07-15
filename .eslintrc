@@ -17,6 +17,14 @@
     "import"
   ],
 
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+
   "rules": {
     // ES spec ESLint rules
     "strict": ["error", "global"],
