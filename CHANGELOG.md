@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.3.2 (2020-07-16)
+
+#### :bug: Bug Fix
+
+* [Fix import of types from *.d.ts](https://github.com/V4Fire/Linters/pull/2)
+
 ## v1.3.0 (2020-07-10)
 
 #### :rocket: New Feature
