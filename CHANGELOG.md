@@ -11,6 +11,13 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.4.0 (2020-07-18)
+
+#### :boom: Breaking Change
+
+* `no-extra-parens` -> `off`
+* `implicit-arrow-linebreak` -> `off`
+
 ## v1.3.2 (2020-07-16)
 
 #### :bug: Bug Fix
