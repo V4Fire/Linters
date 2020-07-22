@@ -114,7 +114,7 @@
     "radix": true,
     "restrict-plus-operands": true,
     "strict-boolean-expressions": false,
-    "strict-type-predicates": true,
+    "strict-type-predicates": false,
     "switch-default": false,
     "triple-equals": [true, "allow-null-check"],
     "typeof-compare": true,
