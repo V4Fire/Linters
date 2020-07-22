@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.5.0 (2020-07-22)
+
+#### :boom: Breaking Change
+
+* `strict-type-predicates` -> `false`
+
 ## v1.4.0 (2020-07-18)
 
 #### :boom: Breaking Change
