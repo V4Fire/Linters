@@ -15,6 +15,12 @@ _Note: Gaps between patch versions are faulty, broken or test releases._
 
 #### :bug: Bug Fix
 
+* eslint `capitalized-comments.ignorePattern` -> `#|tslint`
+
+## v1.5.1 (2020-07-22)
+
+#### :bug: Bug Fix
+
 * tslint `object-literal-key-quotes` -> `false`
 
 ## v1.5.0 (2020-07-22)

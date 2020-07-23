@@ -414,7 +414,7 @@
     }],
 
     "capitalized-comments": ["error", "always", {
-      "ignorePattern": "#",
+      "ignorePattern": "#|tslint",
       "ignoreConsecutiveComments": true
     }],
 
