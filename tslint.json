@@ -6,34 +6,7 @@
     "adjacent-overload-signatures": true,
     "ban-comma-operator": false,
     "member-access": false,
-    "member-ordering": [
-      true,
-      {
-        "order": [
-          "public-static-field",
-          "public-static-method",
-
-          "protected-static-field",
-          "protected-static-method",
-
-          "public-instance-field",
-          "protected-instance-field",
-          "private-instance-field",
-
-          "public-constructor",
-          "protected-constructor",
-
-          "public-instance-method",
-          "protected-instance-method",
-
-          "private-static-field",
-          "private-static-method",
-
-          "private-constructor",
-          "private-instance-method"
-        ]
-      }
-    ],
+    "member-ordering": false,
     "no-any": false,
     "no-empty-interface": false,
     "no-import-side-effect": false,
