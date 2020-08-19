@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.5.3 (2020-08-19)
+
+#### :bug: Bug Fix
+
+* tslint `no-var-keyword` -> `false`
+
 ## v1.5.4 (2020-08-02)
 
 #### :house: Internal
