@@ -11,6 +11,17 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.5.4 (2020-08-02)
+
+#### :house: Internal
+
+* Updated dependencies:
+  * `@typescript-eslint/eslint-plugin@3.7.1`"
+  * `@typescript-eslint/parser@3.7.1`
+  * `eslint@7.6.0`
+  * `eslint-import-resolver-typescript@2.2.0`
+  * `tslint@6.1.3`
+
 ## v1.5.3 (2020-07-29)
 
 #### :bug: Bug Fix
