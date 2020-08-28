@@ -11,6 +11,13 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.5.7 (2020-08-28)
+
+#### :house: Internal
+
+* Updated dependencies:
+  * `@v4fire/typescript-check@1.2.0`
+
 ## v1.5.6 (2020-08-28)
 
 #### :bug: Bug Fix
