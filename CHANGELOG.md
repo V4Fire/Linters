@@ -11,6 +11,16 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.5.6 (2020-08-28)
+
+#### :bug: Bug Fix
+
+* tslint
+  * `no-use-before-declare` -> `false`
+  * `no-var-requires` -> `false`
+  * `unified-signatures` -> `false`
+  * `no-invalid-template-strings` -> `false`
+
 ## v1.5.5 (2020-08-19)
 
 #### :bug: Bug Fix
