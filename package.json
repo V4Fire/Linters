@@ -23,16 +23,16 @@
     "Linters"
   ],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "3.7.1",
     "@v4fire/typescript-check": "^1.2.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.6.0",
-    "eslint-import-resolver-typescript": "^2.2.0",
-    "eslint-plugin-enchanted-curly": "1.0.1",
+    "eslint": "7.7.0",
+    "eslint-import-resolver-typescript": "^2.2.1",
+    "eslint-plugin-enchanted-curly": "^1.0.1",
     "eslint-plugin-import": "2.22.0",
-    "prettier": "^2.0.5",
-    "stlint": "^1.0.62",
+    "prettier": "^2.1.1",
+    "stlint": "^1.0.65",
     "stlint-v4fire": "^1.0.37",
     "tslint": "^6.1.3"
   }

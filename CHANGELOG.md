@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.5.8 (2020-09-01)
+
+#### :bug: Bug Fix
+
+* Fixed a version of `eslint` to `7.7.0`
+
 ## v1.5.7 (2020-08-28)
 
 #### :house: Internal
