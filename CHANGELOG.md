@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.5.9 (2020-09-11)
+
+#### :bug: Bug Fix
+
+* Disabled `no-duplicate-imports`
+
 ## v1.5.8 (2020-09-01)
 
 #### :bug: Bug Fix
