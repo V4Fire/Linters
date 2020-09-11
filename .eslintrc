@@ -331,7 +331,7 @@
 
     // Imports
 
-    "no-duplicate-imports": "error",
+    "no-duplicate-imports": "off",
     "no-useless-rename": "off",
 
     // Functions
