@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.5.10 (2020-09-24)
+
+#### :house: Internal
+
+* Added an override for `lib/*.js`
+
 ## v1.5.9 (2020-09-11)
 
 #### :bug: Bug Fix
