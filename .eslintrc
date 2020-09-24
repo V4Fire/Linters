@@ -890,6 +890,18 @@
         "@typescript-eslint/no-this-alias": ["error", {
           "allowDestructuring": true,
           "allowedNames": ["self", "that"]
+        }],
+
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error", {
+          "functions": false,
+          "typedefs": false,
+          "ignoreTypeReferences": true
+        }],
+
+        "no-redeclare": "off",
+        "@typescript-eslint/no-redeclare": ["error", {
+          "ignoreDeclarationMerge": true
         }]
       }
     }
