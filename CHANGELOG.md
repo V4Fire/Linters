@@ -17,6 +17,11 @@ _Note: Gaps between patch versions are faulty, broken or test releases._
 
 * Added an override for `lib/*.js`
 
+#### :nail_care: Polish
+
+* Added `npm run up`
+* Added badges within `README.md`
+
 ## v1.5.9 (2020-09-11)
 
 #### :bug: Bug Fix
