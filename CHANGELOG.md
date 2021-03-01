@@ -11,6 +11,23 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.7.0 (2021-03-01)
+
+#### :rocket: New Feature
+
+* Added `@typescript-eslint/no-duplicate-imports` instead of `no-duplicate-imports`
+
+#### :house: Internal
+
+* Updated dependencies:
+  * `eslint@7.21.0`
+  * `@typescript-eslint/eslint-plugin@4.15.2`
+  * `@typescript-eslint/parser/eslint-plugin@4.15.2`
+  * `@v4fire/typescript-check@1.3.1`
+  * `eslint-import-resolver-typescript@2.4.0`
+  * `prettier@2.2.1`
+  * `stlint-v4fire@1.0.38`
+
 ## v1.6.1 (2020-09-24)
 
 #### :bug: Bug Fix
