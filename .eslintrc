@@ -579,7 +579,7 @@
     "import/order": "warn",
     "import/prefer-default-export": "off",
 
-    "import/no-duplicates": "error",
+    "import/no-duplicates": "off",
     "import/no-namespace": "off",
     "import/max-dependencies": "off",
 

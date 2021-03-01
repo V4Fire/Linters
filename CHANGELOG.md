@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.7.2 (2021-03-01)
+
+#### :bug: Bug Fix
+
+* Disabled `import/no-duplicates`
+
 ## v1.7.1 (2021-03-01)
 
 #### :bug: Bug Fix
