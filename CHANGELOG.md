@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.7.1 (2021-03-01)
+
+#### :bug: Bug Fix
+
+* Set `@typescript-eslint/no-duplicate-imports` `includeExports` to `false`
+
 ## v1.7.0 (2021-03-01)
 
 #### :rocket: New Feature
