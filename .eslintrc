@@ -708,7 +708,7 @@
         "@typescript-eslint/no-unnecessary-qualifier": "error",
         "@typescript-eslint/prefer-namespace-keyword": "error",
         "@typescript-eslint/no-require-imports": "off",
-        "@typescript-eslint/no-duplicate-imports": ["error", {"includeExports": false}],
+        "@typescript-eslint/no-duplicate-imports": "error",
         "@typescript-eslint/no-var-requires": "error",
 
         "@typescript-eslint/prefer-as-const": "error",
