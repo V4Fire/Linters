@@ -11,5 +11,6 @@
 module.exports = {
 	singleQuote: true,
 	trailingComma: 'none',
-	bracketSpacing: false
+	bracketSpacing: false,
+	useTabs: true
 };
