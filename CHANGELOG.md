@@ -11,6 +11,25 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.8.0 (2021-10-25)
+
+#### :boom: Breaking Change
+
+* Removed `tslint.json`
+
+#### :bug: Bug Fix
+
+* Added `useTabs` to `.prettierrc.js`
+
+#### :house: Internal
+
+* Updated dependencies:
+  * `eslint@7.32.0`
+  * `prettier@2.4.1`
+  * `@typescript-eslint/eslint-plugin@4.33.0`
+  * `@typescript-eslint/parse@4.33.0`
+  * `eslint-import-resolver-typescript@2.5.0`
+
 ## v1.7.3 (2021-05-19)
 
 #### :bug: Bug Fix

@@ -4,7 +4,7 @@
   "homepage": "https://github.com/V4Fire/Linters#readme",
   "typings": "index.d.ts",
   "license": "MIT",
-  "version": "1.7.3",
+  "version": "1.8.0",
   "author": {
     "name": "kobezzza",
     "email": "kobezzza@gmail.com",
@@ -26,15 +26,15 @@
     "up": "npm i && npm up && npm audit fix"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "@v4fire/typescript-check": "^1.4.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.26.0",
-    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint": "^7.32.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-enchanted-curly": "^1.0.1",
     "eslint-plugin-import": "2.22.1",
-    "prettier": "^2.3.0",
+    "prettier": "^2.4.1",
     "stlint": "^1.0.65",
     "stlint-v4fire": "^1.0.38"
   }
