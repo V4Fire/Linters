@@ -26,6 +26,8 @@
     "up": "npm i && npm up && npm audit fix"
   },
   "dependencies": {
+    "@statoscope/stats-validator-plugin-webpack": "^5.18.0",
+    "@statoscope/stats-validator-reporter-console": "^5.14.1",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "@v4fire/typescript-check": "^1.4.0",
