@@ -15,7 +15,7 @@ _Note: Gaps between patch versions are faulty, broken or test releases._
 
 #### :rocket: New Feature
 
-* Added new dependencies: `@statoscope/stats-validator-plugin-webpack` and `@statoscope/stats-validator-reporter-console` for linting statoscope report
+* Added new dependencies: `@statoscope/stats-validator-plugin-webpack` and `@statoscope/stats-validator-reporter-console` to lint statoscope reports
 
 ## v1.8.0 (2021-10-25)
 
