@@ -11,6 +11,19 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v1.10.0 (2022-09-15)
+
+### :rocker: New Feature
+
+* Refactored eslint rules
+* Added `tsdoc-eslint` plugin
+* Added `jsdoc-eslint` plugin
+
+:boom: Breaking Change
+
+* Migrated on `eslint@8`
+* Removed `babel-parser`
+
 ## v1.9.0 (2021-11-15)
 
 #### :rocket: New Feature
