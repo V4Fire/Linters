@@ -1,21 +1,13 @@
 {
-  "parser": "babel-eslint",
-
-  "parserOptions": {
-    "sourceType": "module"
-  },
-
   "env": {
     "browser": true,
-    "es6": true,
-    "es2017": true
+    "es2021": true
   },
 
-  "plugins": [
-    "@typescript-eslint",
-    "enchanted-curly",
-    "import"
-  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+  },
 
   "rules": {
     // ES spec ESLint rules
@@ -76,7 +68,7 @@
     // Variables
 
     "one-var": "off",
-    "one-var-declaration-per-line": "error",
+    "one-var-declaration-per-line": "off",
     "vars-on-top": "error",
 
     "no-var": "error",
@@ -256,7 +248,7 @@
 
     // Spaces
 
-    "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+    "no-mixed-spaces-and-tabs": ["error"],
     "no-tabs": ["error", {"allowIndentationTabs": true}],
 
     "semi-spacing": "error",
@@ -414,7 +406,7 @@
     }],
 
     "capitalized-comments": ["error", "always", {
-      "ignorePattern": "#|tslint",
+      "ignorePattern": "#",
       "ignoreConsecutiveComments": true
     }],
 
@@ -438,9 +430,9 @@
 
     // Debug
 
-    "no-console": "off",
-    "no-alert": "warn",
-    "no-debugger": "warn",
+    "no-console": "error",
+    "no-alert": "error",
+    "no-debugger": "error",
 
     // Best practices
 
@@ -478,7 +470,7 @@
     "comma-style": "error",
     "comma-spacing": "error",
 
-    "quotes": ["error", "single", {"avoidEscape":  true}],
+    "quotes": ["error", "single", {"avoidEscape": true}],
     "quote-props": ["error", "as-needed", {"keywords": false, "numbers": false}],
     "jsx-quotes": "error",
 
@@ -576,7 +568,6 @@
     "import/newline-after-import": "error",
     "import/exports-last": "off",
 
-    "import/order": "warn",
     "import/prefer-default-export": "off",
 
     "import/no-duplicates": "off",
@@ -587,8 +578,17 @@
       "js": "never",
       "jsx": "never",
       "ts": "never",
-      "tsx": "never"
+      "tsx": "never",
+      "json": "always"
     }]
+  },
+
+  "settings": {
+    "jsdoc": {
+      "tagNamePreference": {
+        "fires": "emits"
+      }
+    }
   },
 
   "overrides": [
@@ -600,19 +600,61 @@
         "./config/**/*.js"
       ],
 
-      "parserOptions": {
-        "sourceType": "script"
-      },
+      "plugins": [
+        "enchanted-curly",
+        "import",
+        "jsdoc"
+      ],
+
+      "extends": [
+        "plugin:jsdoc/recommended"
+      ],
 
       "env": {
         "node": true,
-        "es6": true,
-        "es2017": true
+        "es2021": true
+      },
+
+      "parserOptions": {
+        "sourceType": "script",
+        "ecmaVersion": "latest"
       },
 
       "rules": {
         "import/no-nodejs-modules": "off",
-        "import/order": "off"
+        "import/order": "off",
+
+        "jsdoc/check-access": 1,
+        "jsdoc/check-alignment": 1,
+        "jsdoc/check-param-names": 1,
+        "jsdoc/check-property-names": 1,
+        "jsdoc/check-tag-names": 1,
+        "jsdoc/check-types": 1,
+        "jsdoc/check-values": 1,
+        "jsdoc/empty-tags": 1,
+        "jsdoc/implements-on-classes": 1,
+        "jsdoc/match-description": 1,
+        "jsdoc/multiline-blocks": 1,
+        "jsdoc/newline-after-description": 1,
+        "jsdoc/no-multi-asterisks": 1,
+        "jsdoc/no-undefined-types": 1,
+        "jsdoc/require-jsdoc": 1,
+        "jsdoc/require-param": 1,
+        "jsdoc/require-param-description": 1,
+        "jsdoc/require-param-name": 1,
+        "jsdoc/require-param-type": 1,
+        "jsdoc/require-property": 1,
+        "jsdoc/require-property-description": 1,
+        "jsdoc/require-property-name": 1,
+        "jsdoc/require-property-type": 1,
+        "jsdoc/require-returns": 1,
+        "jsdoc/require-returns-check": 1,
+        "jsdoc/require-returns-description": 1,
+        "jsdoc/require-returns-type": 1,
+        "jsdoc/require-yields": 1,
+        "jsdoc/require-yields-check": 1,
+        "jsdoc/tag-lines": 1,
+        "jsdoc/valid-types": 1
       }
     },
 
@@ -620,10 +662,16 @@
       "files": ["*.ts", "*.tsx"],
       "parser": "@typescript-eslint/parser",
 
+      "plugins": [
+        "enchanted-curly",
+        "@typescript-eslint"
+      ],
+
       "parserOptions": {
         "project": "tsconfig.json",
         "tsconfigRootDir": ".",
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": "latest"
       },
 
       "settings": {
@@ -635,8 +683,6 @@
       },
 
       "rules": {
-        // [TSLint]
-
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-misused-new": "error",
         "@typescript-eslint/no-invalid-void-type": "error",
@@ -810,8 +856,6 @@
           ]
         }],
 
-        // [TSLint & ESLint]
-
         "brace-style": "off",
         "@typescript-eslint/brace-style": "error",
 
@@ -864,15 +908,16 @@
         "@typescript-eslint/no-unused-expressions": ["error", {"allowShortCircuit": true}],
 
         "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars-experimental": ["error", {
-          "ignoreArgsIfArgsAfterAreUsed": true
+        "@typescript-eslint/no-unused-vars": ["error", {
+          "args": "after-used",
+          "argsIgnorePattern": "^_"
         }],
 
         "no-useless-constructor": "off",
         "@typescript-eslint/no-useless-constructor": "error",
 
         "quotes": "off",
-        "@typescript-eslint/quotes": ["error", "single", {"avoidEscape":  true}],
+        "@typescript-eslint/quotes": ["error", "single", {"avoidEscape": true}],
 
         "require-await": "off",
         "@typescript-eslint/require-await": "error",
