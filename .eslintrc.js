@@ -14,7 +14,6 @@ const restrictedSyntax = [
 	'findLastIndex',
 	'at',
 	'of',
-	'flatMap',
 	'trimLeft',
 	'trimRight',
 	'trimStart',
