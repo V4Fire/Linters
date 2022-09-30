@@ -14,7 +14,8 @@
   "plugins": [
     "@typescript-eslint",
     "enchanted-curly",
-    "import"
+    "import",
+    "jsdoc"
   ],
 
   "rules": {
