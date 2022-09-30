@@ -36,6 +36,7 @@
     "eslint-import-resolver-typescript": "2.5.0",
     "eslint-plugin-enchanted-curly": "1.0.1",
     "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsdoc": "39.3.6",
     "prettier": "2.4.1",
     "stlint": "1.0.65",
     "stlint-v4fire": "1.0.38"
