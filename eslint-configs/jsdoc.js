@@ -10,7 +10,9 @@ const baseRules = {
 				'packageDocumentation',
 				'decorator',
 				'link',
-				'emits'
+				'emits',
+				'cli',
+				'env'
 			]
 		}
 	],
@@ -89,7 +91,8 @@ const baseSettings = {
 	implementsReplacesDocs: true,
 
 	tagNamePreference: {
-		fires: 'emits'
+		fires: 'emits',
+		return: 'returns'
 	},
 
 	structuredTags: {
@@ -113,13 +116,17 @@ module.exports = {
 };
 
 module.exports.settings.ts = {
-	mode: 'typescript',
-	...baseSettings
+	...baseSettings,
+	mode: 'typescript'
 };
 
 module.exports.settings.js = {
+	...baseSettings,
 	mode: 'closure',
-	...baseSettings
+	preferredTypes: {
+		...baseSettings.preferredTypes,
+		object: 'Object'
+	}
 };
 
 module.exports.rules.ts = {
@@ -127,5 +134,6 @@ module.exports.rules.ts = {
 };
 
 module.exports.rules.js = {
-	...baseRules
+	...baseRules,
+	'jsdoc/no-types': 'off'
 };
