@@ -28,6 +28,8 @@ const restrictedSyntax = [
 }));
 
 module.exports = {
+	"parser": "babel-eslint",
+
 	"env": {
 		"browser": true,
 		"es2021": true
@@ -180,7 +182,7 @@ module.exports = {
 
 		// Dead code
 
-		"no-lone-blocks": "error",
+		"no-lone-blocks": "off",
 		"no-useless-return": "error",
 		"no-useless-catch": "error",
 		"no-unused-labels": "error",
