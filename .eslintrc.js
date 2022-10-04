@@ -8,6 +8,9 @@
  * https://github.com/V4Fire/Linters/blob/master/LICENSE
  */
 
+const
+	jsdoc = require('./eslint-configs/jsdoc');
+
 const restrictedSyntax = [
 	'copyWithin',
 	'findLast',
@@ -34,6 +37,10 @@ module.exports = {
 		"sourceType": "module",
 		"ecmaVersion": "latest"
 	},
+
+	"plugins": [
+		"jsdoc"
+	],
 
 	"rules": {
 		// ES spec ESLint rules
@@ -600,15 +607,7 @@ module.exports = {
 			"ts": "never",
 			"tsx": "never",
 			"json": "always"
-		}]
-	},
-
-	"settings": {
-		"jsdoc": {
-			"tagNamePreference": {
-				"fires": "emits"
-			}
-		}
+		}],		
 	},
 
 	"overrides": [
@@ -626,10 +625,6 @@ module.exports = {
 				"jsdoc"
 			],
 
-			"extends": [
-				"plugin:jsdoc/recommended"
-			],
-
 			"env": {
 				"node": true,
 				"es2021": true
@@ -641,40 +636,14 @@ module.exports = {
 			},
 
 			"rules": {
-				"import/no-nodejs-modules": "off",
-				"import/order": "off",
+				...jsdoc.rules.js,
 
-				"jsdoc/check-access": 1,
-				"jsdoc/check-alignment": 1,
-				"jsdoc/check-param-names": 1,
-				"jsdoc/check-property-names": 1,
-				"jsdoc/check-tag-names": 1,
-				"jsdoc/check-types": 1,
-				"jsdoc/check-values": 1,
-				"jsdoc/empty-tags": 1,
-				"jsdoc/implements-on-classes": 1,
-				"jsdoc/match-description": 1,
-				"jsdoc/multiline-blocks": 1,
-				"jsdoc/newline-after-description": 1,
-				"jsdoc/no-multi-asterisks": 1,
-				"jsdoc/no-undefined-types": 1,
-				"jsdoc/require-jsdoc": 1,
-				"jsdoc/require-param": 1,
-				"jsdoc/require-param-description": 1,
-				"jsdoc/require-param-name": 1,
-				"jsdoc/require-param-type": 1,
-				"jsdoc/require-property": 1,
-				"jsdoc/require-property-description": 1,
-				"jsdoc/require-property-name": 1,
-				"jsdoc/require-property-type": 1,
-				"jsdoc/require-returns": 1,
-				"jsdoc/require-returns-check": 1,
-				"jsdoc/require-returns-description": 1,
-				"jsdoc/require-returns-type": 1,
-				"jsdoc/require-yields": 1,
-				"jsdoc/require-yields-check": 1,
-				"jsdoc/tag-lines": 1,
-				"jsdoc/valid-types": 1
+				"import/no-nodejs-modules": "off",
+				"import/order": "off"
+			},
+
+			"settings": {
+				"jsdoc": jsdoc.settings.js
 			}
 		},
 
@@ -685,7 +654,7 @@ module.exports = {
 			"plugins": [
 				"enchanted-curly",
 				"@typescript-eslint",
-				"eslint-plugin-tsdoc"
+				"jsdoc"
 			],
 
 			"extends": [
@@ -704,11 +673,13 @@ module.exports = {
 					"typescript": {
 						"alwaysTryTypes": true
 					}
-				}
+				},
+
+				jsdoc: jsdoc.settings.ts
 			},
 
 			"rules": {
-				"tsdoc/syntax": "warn",
+				...jsdoc.rules.ts,
 
 				"no-restricted-syntax": [
 					"error",
