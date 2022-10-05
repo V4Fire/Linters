@@ -1,6 +1,3 @@
-/* eslint-disable no-inline-comments */
-/* eslint-disable line-comment-position */
-
 const baseRules = {
 	'jsdoc/check-tag-names': [
 		'error',
@@ -38,50 +35,50 @@ const baseRules = {
 		}
 	],
 
-	'jsdoc/check-indentation': ['error'],
-	'jsdoc/check-param-names': ['error'],
-	'jsdoc/check-alignment': ['error'],
-	'jsdoc/check-line-alignment': ['error'],
-	'jsdoc/check-property-names': ['error'],
-	'jsdoc/check-syntax': ['error'],
-	'jsdoc/check-types': ['error'],
-	'jsdoc/check-values': ['error'],
-	'jsdoc/empty-tags': ['error'],
-	'jsdoc/multiline-blocks': ['error'],
-	'jsdoc/no-bad-blocks': ['error'],
-	'jsdoc/no-defaults': ['error'],
-	'jsdoc/no-multi-asterisks': ['error'],
-	'jsdoc/no-types': ['error'],
-	'jsdoc/no-undefined-types': ['error'],
-	'jsdoc/require-asterisk-prefix': ['error'],
-	'jsdoc/require-hyphen-before-param-description': ['error'],
-	'jsdoc/require-param-name': ['error'],
-	'jsdoc/require-property': ['error'],
-	'jsdoc/require-property-name': ['error'],
-	'jsdoc/require-property-type': ['error'],
-	'jsdoc/require-property-description': ['error'],
-	'jsdoc/require-returns-check': ['error'],
-	'jsdoc/require-returns-description': ['error'],
-	'jsdoc/require-returns-type': ['error'],
-	'jsdoc/require-throws': ['error'],
+	'jsdoc/check-indentation': 'error',
+	'jsdoc/check-param-names': 'error',
+	'jsdoc/check-alignment': 'error',
+	'jsdoc/check-line-alignment': 'error',
+	'jsdoc/check-property-names': 'error',
+	'jsdoc/check-syntax': 'error',
+	'jsdoc/check-types': 'error',
+	'jsdoc/check-values': 'error',
+	'jsdoc/empty-tags': 'error',
+	'jsdoc/multiline-blocks': 'error',
+	'jsdoc/no-bad-blocks': 'error',
+	'jsdoc/no-defaults': 'error',
+	'jsdoc/no-types': 'error',
+	'jsdoc/no-undefined-types': 'error',
+	'jsdoc/require-asterisk-prefix': 'error',
+	'jsdoc/require-hyphen-before-param-description': 'error',
+	'jsdoc/require-param-name': 'error',
+	'jsdoc/require-property': 'error',
+	'jsdoc/require-property-name': 'error',
+	'jsdoc/require-property-type': 'error',
+	'jsdoc/require-property-description': 'error',
+	'jsdoc/require-returns-check': 'error',
+	'jsdoc/require-returns-type': 'error',
+	'jsdoc/require-throws': 'error',
 
-	'jsdoc/check-access': 0,
-	'jsdoc/newline-after-description': 0,
-	'jsdoc/implements-on-classes': 0,
-	'jsdoc/require-yields': 0,
-	'jsdoc/require-yields-check': 0,
-	'jsdoc/tag-lines': 0,
-	'jsdoc/valid-types': 0,
-	'jsdoc/check-examples': 0,
-	'jsdoc/match-description': 0,
-	'jsdoc/no-missing-syntax': 0,
-	'jsdoc/no-restricted-syntax': 0,
-	'jsdoc/require-description-complete-sentence': 0,
-	'jsdoc/require-example': 0,
-	'jsdoc/require-file-overview': 0,
-	'jsdoc/require-param-description': 0,
-	'jsdoc/require-param-type': 0,
-	'jsdoc/require-returns': 0
+	'jsdoc/check-access': 'off',
+	'jsdoc/newline-after-description': 'off',
+	'jsdoc/implements-on-classes': 'off',
+	'jsdoc/require-yields': 'off',
+	'jsdoc/require-yields-check': 'off',
+	'jsdoc/tag-lines': 'off',
+	'jsdoc/valid-types': 'off',
+	'jsdoc/check-examples': 'off',
+	'jsdoc/match-description': 'off',
+	'jsdoc/no-missing-syntax': 'off',
+	'jsdoc/no-restricted-syntax': 'off',
+	'jsdoc/require-description-complete-sentence': 'off',
+	'jsdoc/require-example': 'off',
+	'jsdoc/require-file-overview': 'off',
+	'jsdoc/require-param-description': 'off',
+	'jsdoc/require-param-type': 'off',
+	'jsdoc/require-returns': 'off',
+	'jsdoc/require-returns-description': 'off',
+	'jsdoc/no-multi-asterisks': 'off'
 };
 
 const baseSettings = {
@@ -124,8 +121,7 @@ module.exports.settings.js = {
 	...baseSettings,
 	mode: 'closure',
 	preferredTypes: {
-		...baseSettings.preferredTypes,
-		object: 'Object'
+		...baseSettings.preferredTypes
 	}
 };
 
@@ -135,5 +131,7 @@ module.exports.rules.ts = {
 
 module.exports.rules.js = {
 	...baseRules,
+	'jsdoc/require-param-type': 'error',
+	'jsdoc/require-returns': 'error',
 	'jsdoc/no-types': 'off'
 };
