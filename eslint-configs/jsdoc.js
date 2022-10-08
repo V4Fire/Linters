@@ -18,7 +18,8 @@ const baseRules = {
 		'error',
 		{
 			exemptEmptyFunctions: true,
-			publicOnly: true
+			publicOnly: true,
+			contexts: ['PropertyDefinition', 'ClassDeclaration']
 		}
 	],
 	'jsdoc/require-description': [
