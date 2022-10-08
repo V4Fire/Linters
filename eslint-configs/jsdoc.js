@@ -19,7 +19,15 @@ const baseRules = {
 		{
 			exemptEmptyFunctions: true,
 			publicOnly: true,
-			contexts: ['PropertyDefinition', 'ClassDeclaration']
+			contexts: [
+				'PropertyDefinition',
+				'ArrowFunctionExpression',
+				'ClassDeclaration',
+				'ClassExpression',
+				'FunctionDeclaration',
+				'FunctionExpression',
+				'MethodDefinition'
+			]
 		}
 	],
 	'jsdoc/require-description': [
