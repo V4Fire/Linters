@@ -40,12 +40,18 @@ const baseRules = {
 		'error',
 		{
 			checkSetters: false,
-			checkConstructors: false
+			checkConstructors: false,
+			checkDestructured: false
+		}
+	],
+	'jsdoc/check-param-names': [
+		'error',
+		{
+			checkDestructured: false
 		}
 	],
 
 	'jsdoc/check-indentation': 'error',
-	'jsdoc/check-param-names': 'error',
 	'jsdoc/check-alignment': 'error',
 	'jsdoc/check-line-alignment': 'error',
 	'jsdoc/check-property-names': 'error',
