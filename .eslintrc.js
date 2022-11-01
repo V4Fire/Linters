@@ -836,9 +836,8 @@ module.exports = {
 						"signature",
 
 						"public-static-field",
-						"public-static-method",
-
 						"protected-static-field",
+						"public-static-method",
 						"protected-static-method",
 
 						"public-instance-field",
