@@ -9,23 +9,8 @@
  */
 
 const
-	jsdoc = require('./eslint-configs/jsdoc');
-
-const restrictedSyntax = [
-	'copyWithin',
-	'findLast',
-	'findLastIndex',
-	'at',
-	'of',
-	'trimLeft',
-	'trimRight',
-	'trimStart',
-	'trimEnd',
-	'matchAll'
-].map(item => ({
-	message: 'No polyfill enabled for this method',
-	selector: `MemberExpression > Identifier[name="${item}"]`,
-}));
+	jsdoc = require('./eslint-configs/jsdoc'),
+	restrictedSyntax = require('./eslint-configs/restricted-syntax');
 
 module.exports = {
 	"env": {
