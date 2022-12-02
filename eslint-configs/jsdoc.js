@@ -9,13 +9,14 @@ const baseRules = {
 				'link',
 				'emits',
 				'cli',
-				'env'
+				'env',
+				'throws'
 			]
 		}
 	],
 
 	'jsdoc/require-jsdoc': [
-		'error',
+		'warn',
 		{
 			exemptEmptyFunctions: true,
 			publicOnly: true,
@@ -31,13 +32,13 @@ const baseRules = {
 		}
 	],
 	'jsdoc/require-description': [
-		'error',
+		'warn',
 		{
 			checkConstructors: false
 		}
 	],
 	'jsdoc/require-param': [
-		'error',
+		'warn',
 		{
 			checkSetters: false,
 			checkConstructors: false,
@@ -45,7 +46,7 @@ const baseRules = {
 		}
 	],
 	'jsdoc/check-param-names': [
-		'error',
+		'warn',
 		{
 			checkDestructured: false
 		}
@@ -65,18 +66,17 @@ const baseRules = {
 	'jsdoc/no-types': 'error',
 	'jsdoc/no-undefined-types': 'error',
 	'jsdoc/require-asterisk-prefix': 'error',
-	'jsdoc/require-hyphen-before-param-description': 'error',
 	'jsdoc/require-param-name': 'error',
 	'jsdoc/require-property': 'error',
 	'jsdoc/require-property-name': 'error',
 	'jsdoc/require-property-type': 'error',
-	'jsdoc/require-property-description': 'error',
-	'jsdoc/require-returns-check': 'error',
-	'jsdoc/require-returns-type': 'error',
-	'jsdoc/require-throws': 'error',
+	'jsdoc/newline-after-description': 'error',
+
+	'jsdoc/require-property-description': 'warn',
+	'jsdoc/require-hyphen-before-param-description': 'warn',
+	'jsdoc/require-throws': 'warn',
 
 	'jsdoc/check-access': 'off',
-	'jsdoc/newline-after-description': 'off',
 	'jsdoc/implements-on-classes': 'off',
 	'jsdoc/require-yields': 'off',
 	'jsdoc/require-yields-check': 'off',
@@ -93,6 +93,8 @@ const baseRules = {
 	'jsdoc/require-param-type': 'off',
 	'jsdoc/require-returns': 'off',
 	'jsdoc/require-returns-description': 'off',
+	'jsdoc/require-returns-check': 'off',
+	'jsdoc/require-returns-type': 'off',
 	'jsdoc/no-multi-asterisks': 'off'
 };
 
@@ -147,6 +149,7 @@ module.exports.rules.ts = {
 module.exports.rules.js = {
 	...baseRules,
 	'jsdoc/require-param-type': 'error',
+	'jsdoc/require-returns-check': 'error',
 	'jsdoc/require-returns': 'error',
 	'jsdoc/no-types': 'off'
 };
