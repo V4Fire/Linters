@@ -27,6 +27,8 @@ module.exports = {
 			}
 	],
 
+	'@typescript-eslint/no-unnecessary-type-constraint': 'off',
+
 	'@typescript-eslint/consistent-type-assertions': [
 		'error', {
 			assertionStyle: 'angle-bracket',

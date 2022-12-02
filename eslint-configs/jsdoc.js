@@ -148,8 +148,8 @@ module.exports.rules.ts = {
 
 module.exports.rules.js = {
 	...baseRules,
-	'jsdoc/require-param-type': 'error',
-	'jsdoc/require-returns-check': 'error',
-	'jsdoc/require-returns': 'error',
+	'jsdoc/require-param-type': 'warn',
+	'jsdoc/require-returns-check': 'warn',
+	'jsdoc/require-returns': 'warn',
 	'jsdoc/no-types': 'off'
 };

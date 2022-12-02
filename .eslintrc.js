@@ -12,7 +12,7 @@ const
 	jsdoc = require('./eslint-configs/jsdoc'),
 	restrictedSyntax = require('./eslint-configs/restricted-syntax'),
 	globalRules = require('./eslint-configs/global-rules'),
-	typescriptEslintRules = require('./eslint-configs/typescript-eslint');
+	typescriptRules = require('./eslint-configs/typescript-rules');
 
 module.exports = {
 	env: {
@@ -109,7 +109,7 @@ module.exports = {
 					...restrictedSyntax
 				],
 
-				...typescriptEslintRules
+				...typescriptRules
 			}
 		}
 	]
