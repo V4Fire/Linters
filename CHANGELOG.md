@@ -11,6 +11,20 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v2.0.0 (2022-??-??)
+
+### :boom: Breaking Change
+
+* Migrated on `eslint@8`
+* Removed `babel-parser`
+* Removed `prettier`
+
+### :rocket: New Feature
+
+* Refactored eslint rules
+* Added configs for `jest-eslint-runner`
+* Added `jsdoc-eslint` plugin
+
 ## v1.9.0 (2021-11-15)
 
 #### :rocket: New Feature
