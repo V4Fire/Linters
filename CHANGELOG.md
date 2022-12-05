@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v2.1.0 (2022-12-05)
+
+#### :house: Internal
+
+* Small fixes on typescript and base eslint configs
+
 ## v2.0.0 (2022-12-02)
 
 ### :boom: Breaking Change
