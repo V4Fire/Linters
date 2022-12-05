@@ -5,6 +5,7 @@ const baseRules = {
 			definedTags: [
 				'typeParam',
 				'packageDocumentation',
+				'packageDescription',
 				'decorator',
 				'link',
 				'emits',
@@ -68,8 +69,8 @@ const baseRules = {
 	'jsdoc/require-asterisk-prefix': 'error',
 	'jsdoc/require-param-name': 'error',
 	'jsdoc/require-property': 'error',
-	'jsdoc/require-property-name': 'error',
-	'jsdoc/require-property-type': 'error',
+	'jsdoc/require-property-name': 'warn',
+	'jsdoc/require-property-type': 'warn',
 	'jsdoc/newline-after-description': 'error',
 
 	'jsdoc/require-property-description': 'warn',

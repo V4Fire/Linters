@@ -113,6 +113,8 @@ module.exports = {
 
 	'@typescript-eslint/switch-exhaustiveness-check': 'warn',
 	'@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
+
+	'no-extra-boolean-cast': 'off',
 	'@typescript-eslint/strict-boolean-expressions': [
 		'error', {
 			allowString: false,
