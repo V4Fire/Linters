@@ -17,7 +17,7 @@ const baseRules = {
 	],
 
 	'jsdoc/require-jsdoc': [
-		'warn',
+		'off',
 		{
 			exemptEmptyFunctions: true,
 			publicOnly: true,
@@ -71,7 +71,7 @@ const baseRules = {
 	'jsdoc/require-property': 'error',
 	'jsdoc/require-property-name': 'warn',
 	'jsdoc/require-property-type': 'warn',
-	'jsdoc/newline-after-description': 'error',
+	'jsdoc/newline-after-description': 'off',
 
 	'jsdoc/require-property-description': 'warn',
 	'jsdoc/require-hyphen-before-param-description': 'warn',

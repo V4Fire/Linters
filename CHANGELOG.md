@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v2.2.0 (2023-31-01)
+
+#### :house: Internal
+
+* Disabled `require-jsdoc` and `jsdoc/newline-after-description`
+
 ## v2.1.0 (2022-12-05)
 
 #### :house: Internal
