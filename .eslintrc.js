@@ -111,6 +111,53 @@ module.exports = {
 
 				...typescriptRules
 			}
+		},
+
+
+		{
+			files: ["server/**/*.ts"],
+			parser: "@typescript-eslint/parser",
+
+			env: {
+				node: true,
+				es2021: true
+			},
+
+
+			plugins: [
+				"enchanted-curly",
+				"@typescript-eslint",
+				"jsdoc"
+			],
+
+			extends: [
+				"plugin:@typescript-eslint/recommended"
+			],
+
+			parserOptions: {
+				project: "server.tsconfig.json",
+				tsconfigRootDir: ".",
+				sourceType: "module",
+				ecmaVersion: "latest"
+			},
+
+			settings: {
+				"import/resolver": {
+					typescript: {
+						alwaysTryTypes: true
+					}
+				},
+
+				jsdoc: jsdoc.settings.ts
+			},
+
+			rules: {
+				...jsdoc.rules.ts,
+
+				...typescriptRules,
+
+				"import/no-nodejs-modules": "off"
+			}
 		}
 	]
 }
