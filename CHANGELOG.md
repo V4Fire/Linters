@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v2.3.0 (2023-14-03)
+
+#### :house: Internal
+
+* Moved `eslint-plugin-enchanted-curly` dependency on npm 
+
 ## v2.2.0 (2023-31-01)
 
 #### :house: Internal

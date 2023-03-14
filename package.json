@@ -4,7 +4,7 @@
   "homepage": "https://github.com/V4Fire/Linters#readme",
   "typings": "index.d.ts",
   "license": "MIT",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "author": {
     "name": "kobezzza",
     "email": "kobezzza@gmail.com",
@@ -35,7 +35,7 @@
     "@v4fire/typescript-check": "1.4.2",
     "eslint": "8.20.0",
     "eslint-import-resolver-typescript": "3.3.0",
-    "eslint-plugin-enchanted-curly": "git+https://github.com/kobezzza/eslint-plugin-enchanted-curly",
+    "eslint-plugin-enchanted-curly": "1.1.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsdoc": "39.3.6",
     "stlint": "1.0.65",
