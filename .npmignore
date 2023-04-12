@@ -41,6 +41,7 @@ Icon
 /bower_components
 /node_modules
 /.yalc
+/.yarn
 /yalc.lock
 
 # Build && test
@@ -48,7 +49,7 @@ Icon
 /.nyc_output
 /dist
 /tsconfig.json
-/*.tsconfig.json
+/client.tsconfig.json
 .env
 
 # Log
@@ -61,18 +62,12 @@ Icon
 /Releases-js
 /tmp
 /app-cache
+/.eslintcache
 /app-std-cache
 /src/entries/tmp
 /db
 
-# Statoscope
-statoscope-*/*
-statoscope-*.config.js
-
-# Yarn
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# NPM ignore list
+/docs
+/.github
+/.husky

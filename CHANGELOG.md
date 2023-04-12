@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v2.4.0 (2023-12-04)
+
+#### :house: Internal
+
+* Moved on `yarn` package manager
+
 ## v2.3.0 (2023-14-03)
 
 #### :house: Internal
