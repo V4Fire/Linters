@@ -250,6 +250,18 @@ module.exports = {
 	'semi-spacing': 'error',
 	'semi-style': 'error',
 
+	indent: [
+		'error', 'tab', {
+			SwitchCase: 1,
+			ignoredNodes: [
+				// Ignore property expression with decorator
+				'FunctionExpression > .params[decorators.length > 0]',
+				'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
+				'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key'
+			],
+			MemberExpression: 1
+		}
+	],
 	'no-multi-spaces': 'error',
 	'no-trailing-spaces': 'error',
 
@@ -260,7 +272,13 @@ module.exports = {
 	'space-before-blocks': 'error',
 	'no-whitespace-before-property': 'error',
 
-	'keyword-spacing': 'off',
+	'keyword-spacing': [
+		'error',
+		{
+			before: true,
+			after: true
+		}
+	],
 
 	'rest-spread-spacing': 'error',
 	'yield-star-spacing': ['error', 'after'],
@@ -518,7 +536,7 @@ module.exports = {
 	],
 
 	'max-len': [
-			'error', {
+		'error', {
 			code: 120,
 			tabWidth: 2,
 			ignoreUrls: true,
@@ -531,7 +549,6 @@ module.exports = {
 	// [Import]
 
 	'import/no-unresolved': 'off',
-	// 'import/no-cycle': 'warn',
 
 	'import/no-absolute-path': 'error',
 	'import/no-relative-parent-imports': 'off',

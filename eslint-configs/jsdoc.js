@@ -17,25 +17,27 @@ const baseRules = {
 	],
 
 	'jsdoc/require-jsdoc': [
-		'off',
+		'warn',
 		{
 			exemptEmptyFunctions: true,
 			publicOnly: true,
+			checkConstructors: false,
 			contexts: [
-				'PropertyDefinition',
+				'PropertyDefinition[override=false]',
+				'MethodDefinition[override=false]',
 				'ArrowFunctionExpression',
 				'ClassDeclaration',
 				'ClassExpression',
 				'FunctionDeclaration',
-				'FunctionExpression',
-				'MethodDefinition'
+				'FunctionExpression'
 			]
 		}
 	],
 	'jsdoc/require-description': [
 		'warn',
 		{
-			checkConstructors: false
+			checkConstructors: false,
+			exemptedBy: ['inheritdoc', 'link']
 		}
 	],
 	'jsdoc/require-param': [
@@ -52,6 +54,8 @@ const baseRules = {
 			checkDestructured: false
 		}
 	],
+
+	// 'v4fire/newline-after-description': 'error',
 
 	'jsdoc/check-indentation': 'error',
 	'jsdoc/check-alignment': 'error',
@@ -71,7 +75,6 @@ const baseRules = {
 	'jsdoc/require-property': 'error',
 	'jsdoc/require-property-name': 'warn',
 	'jsdoc/require-property-type': 'warn',
-	'jsdoc/newline-after-description': 'off',
 
 	'jsdoc/require-property-description': 'warn',
 	'jsdoc/require-hyphen-before-param-description': 'warn',
@@ -107,7 +110,8 @@ const baseSettings = {
 
 	tagNamePreference: {
 		fires: 'emits',
-		return: 'returns'
+		return: 'returns',
+		inheritDoc: false
 	},
 
 	structuredTags: {

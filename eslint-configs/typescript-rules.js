@@ -15,7 +15,7 @@ module.exports = {
 	'@typescript-eslint/prefer-nullish-coalescing': 'warn',
 
 	'@typescript-eslint/no-inferrable-types': [
-	'error', {
+		'error', {
 			ignoreParameters: true,
 			ignoreProperties: true
 		}
@@ -23,8 +23,8 @@ module.exports = {
 
 	'@typescript-eslint/array-type': [
 		'error', {
-				default: 'array-simple'
-			}
+			default: 'array-simple'
+		}
 	],
 
 	'@typescript-eslint/no-unnecessary-type-constraint': 'off',
@@ -217,9 +217,6 @@ module.exports = {
 	'init-declarations': 'off',
 	'@typescript-eslint/init-declarations': 'off',
 
-	'keyword-spacing': 'off',
-	'@typescript-eslint/keyword-spacing': 'off',
-
 	'lines-between-class-members': 'off',
 	'@typescript-eslint/lines-between-class-members': ['error', {exceptAfterSingleLine: true}],
 
@@ -304,6 +301,8 @@ module.exports = {
 			ignoreDeclarationMerge: true
 		}
 	],
+
+	'keyword-spacing': 'off',
 
 	// Debug
 
