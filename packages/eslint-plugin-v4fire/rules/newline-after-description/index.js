@@ -1,0 +1,83 @@
+const {default: iterateJsdoc} = require('eslint-plugin-jsdoc/dist/iterateJsdoc');
+
+/**
+ * Rules for check newline after description
+ */
+const newlineAfterDescription = iterateJsdoc(({
+	sourceCode,
+	jsdoc,
+	jsdocNode,
+	report,
+	indent,
+	utils
+}) => {
+	const {
+		description,
+		lastDescriptionLine
+	} = utils.getDescription();
+
+	const
+		descriptionEndsWithANewline = (/\n\r?$/u).test(description),
+		isDescriptionMultiline = checkDescriptionMultiline(description, descriptionEndsWithANewline),
+		isMultipleTags = jsdoc.tags.length > 1,
+		sourceLines = sourceCode.getText(jsdocNode).split('\n');
+
+	if (isMultipleTags || isDescriptionMultiline) {
+		if (!descriptionEndsWithANewline) {
+			report('There must be a newline after the description of the JSDoc block.', (fixer) => {
+				// Add the new line
+				const injectedLine = `${indent} *${sourceLines[lastDescriptionLine].endsWith('\r') ? '\r' : ''}`;
+				sourceLines.splice(lastDescriptionLine + 1, 0, injectedLine);
+
+				return fixer.replaceText(jsdocNode, sourceLines.join('\n'));
+			}, {
+				line: lastDescriptionLine
+			});
+		}
+
+	} else if (descriptionEndsWithANewline) {
+		report('There must be no newline after the description of the JSDoc block.', (fixer) => {
+			// Remove the extra line
+			sourceLines.splice(lastDescriptionLine, 1);
+
+			return fixer.replaceText(jsdocNode, sourceLines.join('\n'));
+		}, {
+			line: lastDescriptionLine
+		});
+	}
+}, {
+	iterateAllJsdocs: true,
+	meta: {
+		docs: {
+			description: 'Enforces a consistent padding of the block description.'
+		},
+		fixable: 'whitespace',
+		schema: [
+			{
+				enum: ['always', 'never'],
+				type: 'string'
+			}
+		],
+		type: 'layout'
+	}
+});
+
+/**
+ * Returns true if description contains two or more lines
+ *
+ * @param {string} description
+ * @param {boolean} descriptionEndsWithANewline
+ *
+ * @returns boolean
+ */
+function checkDescriptionMultiline(description, descriptionEndsWithANewline) {
+	let testValue = description;
+
+	if (descriptionEndsWithANewline) {
+		testValue = testValue.slice(0, -2);
+	}
+
+	return /\n\r?/u.test(testValue);
+}
+
+module.exports = {newlineAfterDescription};

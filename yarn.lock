@@ -535,9 +535,9 @@ __metadata:
     "@v4fire/typescript-check": 1.4.2
     eslint: 8.38.0
     eslint-import-resolver-typescript: 3.5.5
-    eslint-plugin-enchanted-curly: 1.1.0
     eslint-plugin-import: 2.27.5
     eslint-plugin-jsdoc: 40.1.2
+    eslint-plugin-v4fire: "workspace:^"
     stlint: 1.0.65
     stlint-v4fire: 1.0.38
     typescript: 4.4.4
@@ -1222,13 +1222,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-enchanted-curly@npm:1.1.0":
-  version: 1.1.0
-  resolution: "eslint-plugin-enchanted-curly@npm:1.1.0::__archiveUrl=https%3A%2F%2Fnpm.yandex-team.ru%2Feslint-plugin-enchanted-curly%2F-%2Feslint-plugin-enchanted-curly-1.1.0.tgz%3Frbtorrent%3Dea3abaf09ddf696c5e0577b6503efe62805f3855"
-  checksum: d8b94a4d7ac1580fed21e5edd90341ef69a3f6342022f0608ef9e32781b40be208214c41994abf977faef7eb684028a3611b61af1cbda422fe2fba22aac7d4ca
-  languageName: node
-  linkType: hard
-
 "eslint-plugin-import@npm:2.27.5":
   version: 2.27.5
   resolution: "eslint-plugin-import@npm:2.27.5::__archiveUrl=https%3A%2F%2Fnpm.yandex-team.ru%2Feslint-plugin-import%2F-%2Feslint-plugin-import-2.27.5.tgz%3Frbtorrent%3D1fa96a0ab1b3f7eeb39015a988f19275f9077ea0"
@@ -1270,6 +1263,12 @@ __metadata:
   checksum: be5b35b82cf06933f9cba2b44b8dc578e84bcc6c251c33bc21524f21301d6d58aa17d6afce75880d58b61fef19030a2cb1a59c3084ecd851fa3143fd96667037
   languageName: node
   linkType: hard
+
+"eslint-plugin-v4fire@workspace:^, eslint-plugin-v4fire@workspace:packages/eslint-plugin-v4fire":
+  version: 0.0.0-use.local
+  resolution: "eslint-plugin-v4fire@workspace:packages/eslint-plugin-v4fire"
+  languageName: unknown
+  linkType: soft
 
 "eslint-scope@npm:^5.1.1":
   version: 5.1.1

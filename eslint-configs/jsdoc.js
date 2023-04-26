@@ -80,6 +80,8 @@ const baseRules = {
 	'jsdoc/require-hyphen-before-param-description': 'warn',
 	'jsdoc/require-throws': 'warn',
 
+	'v4fire/newline-after-description': 'error',
+
 	'jsdoc/check-access': 'off',
 	'jsdoc/implements-on-classes': 'off',
 	'jsdoc/require-yields': 'off',

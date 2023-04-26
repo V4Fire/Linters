@@ -32,15 +32,18 @@
     "@v4fire/typescript-check": "1.4.2",
     "eslint": "8.38.0",
     "eslint-import-resolver-typescript": "3.5.5",
-    "eslint-plugin-enchanted-curly": "1.1.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jsdoc": "40.1.2",
+    "eslint-plugin-v4fire": "workspace:^",
     "stlint": "1.0.65",
     "stlint-v4fire": "1.0.38"
   },
   "peerDependencies": {
     "typescript": "4.4.4"
   },
+  "workspaces": [
+    "packages/eslint-plugin-v4fire"
+  ],
   "devDependencies": {
     "typescript": "4.4.4"
   }

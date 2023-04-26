@@ -305,7 +305,7 @@ module.exports = {
 	'object-curly-newline': ['error', {consistent: true}],
 	'object-property-newline': ['error', {allowAllPropertiesOnSameLine: true}],
 
-	'enchanted-curly/object-curly-spacing': [
+	'v4fire/enchanted-curly': [
 		'error', 'never', {
 			multiline: true,
 			import: true,

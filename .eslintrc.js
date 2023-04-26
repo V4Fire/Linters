@@ -26,7 +26,8 @@ module.exports = {
 	},
 
 	plugins: [
-		"jsdoc"
+		"jsdoc",
+		"v4fire"
 	],
 
 	rules: {
@@ -43,7 +44,6 @@ module.exports = {
 			],
 
 			plugins: [
-				"enchanted-curly",
 				"import",
 				"jsdoc"
 			],
@@ -75,8 +75,8 @@ module.exports = {
 			parser: "@typescript-eslint/parser",
 
 			plugins: [
-				"enchanted-curly",
 				"@typescript-eslint",
+				"import",
 				"jsdoc"
 			],
 
