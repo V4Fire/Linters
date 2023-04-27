@@ -72,7 +72,7 @@ const newlineAfterDescription = iterateJsdoc(({
  * @param {string} description
  * @param {boolean} descriptionEndsWithANewline
  *
- * @returns boolean
+ * @returns {boolean}
  */
 function checkDescriptionMultiline(description, descriptionEndsWithANewline) {
 	let testValue = description;

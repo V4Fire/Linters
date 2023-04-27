@@ -47,6 +47,9 @@ module.exports = {
 		return !(token.value === ',' && token.type === 'Punctuator');
 	},
 
+	/**
+	 * Factory for creating typescript eslint rules
+	 */
 	createTSRule: ESLintUtils.RuleCreator(
 		(_name) => 'https://github.com/v4fire/linters'
 	)

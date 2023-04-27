@@ -8,32 +8,6 @@ const util = require('@typescript-eslint/eslint-plugin/dist/util');
 // Rule Definition
 //------------------------------------------------------------------------------
 
-/**
- * The following is a list of exceptions to the rule
- * Generated via the following script.
- * This is statically defined to save making purposely invalid calls every lint run
- * ```
-SUPPORTED_GLOBALS.flatMap(namespace => {
-	const object = window[namespace];
-		return Object.getOwnPropertyNames(object)
-			.filter(
-				name =>
-					!name.startsWith('_') &&
-					typeof object[name] === 'function',
-			)
-			.map(name => {
-				try {
-					const x = object[name];
-					x();
-				} catch (e) {
-					if (e.message.includes("called on non-object")) {
-						return `${namespace}.${name}`;
-					}
-				}
-			});
-}).filter(Boolean);
-	 * ```
- */
 const nativelyNotBoundMembers = new Set([
 	'Promise.all',
 	'Promise.race',
@@ -92,6 +66,13 @@ const nativelyBoundMembers = SUPPORTED_GLOBALS.map((namespace) => {
 	.reduce((arr, names) => arr.concat(names), [])
 	.filter((name) => !nativelyNotBoundMembers.has(name));
 
+/**
+ * Determines is symbol is not imported
+ *
+ * @param  symbol
+ * @param currentSourceFile
+ * @returns {boolean}
+ */
 const isNotImported = (
 	symbol,
 	currentSourceFile
@@ -108,9 +89,21 @@ const isNotImported = (
 	);
 };
 
+/**
+ * Returns name of the node
+ *
+ * @param node
+ * @returns {string}
+ */
 const getNodeName = (node) =>
 	node.type === AST_NODE_TYPES.Identifier ? node.name : null;
 
+/**
+ * Returns full name of the member node (child node of class)
+ *
+ * @param node
+ * @returns {string}
+ */
 const getMemberFullName = (node) =>
 	`${getNodeName(node.object)}.${getNodeName(node.property)}`;
 
@@ -119,6 +112,7 @@ const BASE_MESSAGE =
 
 module.exports = util.createRule({
 	name: 'unbound-method',
+
 	meta: {
 		docs: {
 			description:
@@ -153,12 +147,14 @@ module.exports = util.createRule({
 		],
 		type: 'problem'
 	},
+
 	defaultOptions: [
 		{
 			ignoreStatic: false,
 			ignore: []
 		}
 	],
+
 	create(context, [{ignoreStatic, ignore}]) {
 		const parserServices = util.getParserServices(context);
 		const checker = parserServices.program.getTypeChecker();
@@ -252,6 +248,13 @@ module.exports = util.createRule({
 	}
 });
 
+/**
+ * Check method of class for unbound
+ *
+ * @param symbol
+ * @param ignoreStatic
+ * @returns {Object}
+ */
 function checkMethod(
 	symbol,
 	ignoreStatic
@@ -299,6 +302,12 @@ function checkMethod(
 	return {dangerous: false};
 }
 
+/**
+ * Determines is unbound node safe to use
+ *
+ * @param node
+ * @returns {boolean}
+ */
 function isSafeUse(node) {
 	const {parent} = node;
 

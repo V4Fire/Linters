@@ -17,7 +17,7 @@ module.exports = {
 		 * Determines is the provided member a handler
 		 *
 		 * @param member
-		 * @returns boolean
+		 * @returns {boolean}
 		 */
 		function isMemberHandler(member) {
 			return member.key.name.startsWith('on');
@@ -27,17 +27,18 @@ module.exports = {
 		 * Determines is the provided member protected
 		 *
 		 * @param member
-		 * @returns boolean
+		 * @returns {boolean}
 		 */
 		function isMemberProtected(member) {
 			return member.accessibility === 'protected';
 		}
 
 		/**
-		 * Determines is the provided member protected
+		 * Validate member ordering in class.
+		 * Handlers (started with on) should be in the end of class
 		 *
 		 * @param member
-		 * @returns boolean
+		 * @returns {boolean}
 		 */
 		function validateMembersOrder(node) {
 			const
