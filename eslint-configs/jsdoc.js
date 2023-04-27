@@ -55,8 +55,6 @@ const baseRules = {
 		}
 	],
 
-	// 'v4fire/newline-after-description': 'error',
-
 	'jsdoc/check-indentation': 'error',
 	'jsdoc/check-alignment': 'error',
 	'jsdoc/check-line-alignment': 'error',
@@ -80,7 +78,7 @@ const baseRules = {
 	'jsdoc/require-hyphen-before-param-description': 'warn',
 	'jsdoc/require-throws': 'warn',
 
-	'v4fire/newline-after-description': 'error',
+	'@v4fire/newline-after-description': 'error',
 
 	'jsdoc/check-access': 'off',
 	'jsdoc/implements-on-classes': 'off',
@@ -113,7 +111,8 @@ const baseSettings = {
 	tagNamePreference: {
 		fires: 'emits',
 		return: 'returns',
-		inheritDoc: false
+		inheritDoc: false,
+		override: false
 	},
 
 	structuredTags: {

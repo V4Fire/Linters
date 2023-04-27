@@ -1,4 +1,4 @@
-module.exports = [
+const forbiddenMethods = [
 	'copyWithin',
 	'findLast',
 	'findLastIndex',
@@ -9,7 +9,14 @@ module.exports = [
 	'trimStart',
 	'trimEnd',
 	'matchAll'
-].map((item) => ({
-	message: 'No polyfill enabled for this method',
-	selector: `MemberExpression > Identifier[name="${item}"]`
-}));
+];
+
+module.exports = {
+	'no-restricted-syntax': [
+		'error',
+		...forbiddenMethods.map((item) => ({
+			message: 'No polyfill enabled for this method',
+			selector: `MemberExpression > Identifier[name="${item}"]`
+		}))
+	]
+};

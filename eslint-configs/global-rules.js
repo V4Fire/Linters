@@ -133,6 +133,8 @@ module.exports = {
 	'no-regex-spaces': 'warn',
 	'no-irregular-whitespace': ['error', {skipStrings: true, skipTemplates: true}],
 
+	'optimize-regex/optimize-regex': 'warn',
+
 	// Dead code
 
 	'no-lone-blocks': 'off',
@@ -305,7 +307,7 @@ module.exports = {
 	'object-curly-newline': ['error', {consistent: true}],
 	'object-property-newline': ['error', {allowAllPropertiesOnSameLine: true}],
 
-	'v4fire/enchanted-curly': [
+	'@v4fire/enchanted-curly': [
 		'error', 'never', {
 			multiline: true,
 			import: true,
@@ -394,6 +396,8 @@ module.exports = {
 
 	'lines-between-class-members': 'error',
 
+	'@v4fire/member-order': 'error',
+
 	// Comments
 
 	'no-warning-comments': 'off',
@@ -475,7 +479,8 @@ module.exports = {
 	'no-unused-vars': [
 		'error', {
 			vars: 'all',
-			args: 'after-used'
+			args: 'after-used',
+			argsIgnorePattern: '^_'
 		}
 	],
 

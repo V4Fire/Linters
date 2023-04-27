@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-v4fire",
+  "name": "@v4fire/eslint-plugin",
   "description": "Set of v4fire linters",
   "homepage": "https://github.com/V4Fire/Linters#readme",
   "license": "MIT",

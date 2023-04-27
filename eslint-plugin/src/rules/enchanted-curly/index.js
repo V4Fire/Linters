@@ -3,7 +3,7 @@ const {
 	isClosingBracketToken,
 	isClosingBraceToken,
 	isNotCommaToken
-} = require('../utils');
+} = require('../../utils');
 
 /**
  * @typedef {import('eslint').ASTNode} ASTNode

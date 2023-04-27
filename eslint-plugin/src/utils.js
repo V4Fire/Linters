@@ -3,6 +3,8 @@
  * @typedef {import('eslint').Token} Token
  */
 
+const {ESLintUtils} = require('@typescript-eslint/utils');
+
 module.exports = {
 	/**
 	 * Determines whether two adjacent tokens are on the same line
@@ -43,5 +45,9 @@ module.exports = {
 	 */
 	isNotCommaToken(token) {
 		return !(token.value === ',' && token.type === 'Punctuator');
-	}
+	},
+
+	createTSRule: ESLintUtils.RuleCreator(
+		(_name) => 'https://github.com/v4fire/linters'
+	)
 };

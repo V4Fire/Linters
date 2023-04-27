@@ -12,6 +12,7 @@ const
 	jsdoc = require('./eslint-configs/jsdoc'),
 	restrictedSyntax = require('./eslint-configs/restricted-syntax'),
 	globalRules = require('./eslint-configs/global-rules'),
+	testsRules = require('./eslint-configs/tests-rules'),
 	typescriptRules = require('./eslint-configs/typescript-rules');
 
 module.exports = {
@@ -21,31 +22,28 @@ module.exports = {
 	},
 
 	parserOptions: {
-		sourceType: "module",
-		ecmaVersion: "latest"
+		sourceType: 'module',
+		ecmaVersion: 'latest'
 	},
 
 	plugins: [
-		"jsdoc",
-		"v4fire"
+		'jsdoc',
+		'@v4fire',
+		'import',
+		'optimize-regex'
 	],
 
 	rules: {
-		...globalRules,
+		...globalRules
 	},
 
 	overrides: [
 		{
 			files: [
-				"./*.js",
-				"./lib/**/*.js",
-				"./build/**/*.js",
-				"./config/**/*.js"
-			],
-
-			plugins: [
-				"import",
-				"jsdoc"
+				'./*.js',
+				'./lib/**/*.js',
+				'./build/**/*.js',
+				'./config/**/*.js'
 			],
 
 			env: {
@@ -54,15 +52,15 @@ module.exports = {
 			},
 
 			parserOptions: {
-				sourceType: "script",
-				ecmaVersion: "latest"
+				sourceType: 'script',
+				ecmaVersion: 'latest'
 			},
 
 			rules: {
 				...jsdoc.rules.js,
 
-				"import/no-nodejs-modules": "off",
-				"import/order": "off"
+				'import/no-nodejs-modules': 'off',
+				'import/order': 'off'
 			},
 
 			settings: {
@@ -71,28 +69,26 @@ module.exports = {
 		},
 
 		{
-			files: ["*.ts"],
-			parser: "@typescript-eslint/parser",
+			files: ['*.ts'],
+			parser: '@typescript-eslint/parser',
 
 			plugins: [
-				"@typescript-eslint",
-				"import",
-				"jsdoc"
+				'@typescript-eslint',
+				'deprecation',
+				'playwright'
 			],
 
-			extends: [
-				"plugin:@typescript-eslint/recommended"
-			],
+			extends: ['plugin:@typescript-eslint/recommended'],
 
 			parserOptions: {
-				project: "tsconfig.json",
-				tsconfigRootDir: ".",
-				sourceType: "module",
-				ecmaVersion: "latest"
+				project: 'tsconfig.json',
+				tsconfigRootDir: '.',
+				sourceType: 'module',
+				ecmaVersion: 'latest'
 			},
 
 			settings: {
-				"import/resolver": {
+				'import/resolver': {
 					typescript: {
 						alwaysTryTypes: true
 					}
@@ -102,15 +98,11 @@ module.exports = {
 			},
 
 			rules: {
+				...typescriptRules,
 				...jsdoc.rules.ts,
-
-				"no-restricted-syntax": [
-					"error",
-					...restrictedSyntax
-				],
-
-				...typescriptRules
+				...restrictedSyntax,
+				...testsRules
 			}
 		}
 	]
-}
+};

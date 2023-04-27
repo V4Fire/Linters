@@ -1,7 +1,12 @@
 module.exports = {
 	'@typescript-eslint/no-explicit-any': 'off',
 	'@typescript-eslint/no-misused-new': 'error',
-	'@typescript-eslint/no-invalid-void-type': 'error',
+	'@typescript-eslint/no-invalid-void-type': [
+		'error',
+		{
+			allowAsThisParameter: true
+		}
+	],
 	'@typescript-eslint/no-type-alias': 'off',
 
 	'@typescript-eslint/no-unnecessary-type-arguments': 'off',
@@ -71,9 +76,11 @@ module.exports = {
 	'@typescript-eslint/class-literal-property-style': 'off',
 	'@typescript-eslint/no-extraneous-class': 'error',
 	'@typescript-eslint/no-parameter-properties': 'error',
-	'@typescript-eslint/unbound-method': [
+
+	'@v4fire/unbound-method': [
 		'warn', {
-			ignoreStatic: true
+			ignoreStatic: true,
+			ignore: ['Object', 'Number', 'String', 'RegExp']
 		}
 	],
 
@@ -218,7 +225,9 @@ module.exports = {
 	'@typescript-eslint/init-declarations': 'off',
 
 	'lines-between-class-members': 'off',
-	'@typescript-eslint/lines-between-class-members': ['error', {exceptAfterSingleLine: true}],
+	'@typescript-eslint/lines-between-class-members': ['error', {exceptAfterSingleLine: true, exceptAfterOverload: true}],
+
+	'keyword-spacing': 'off',
 
 	'no-array-constructor': 'off',
 	'@typescript-eslint/no-array-constructor': 'error',
@@ -256,6 +265,8 @@ module.exports = {
 			argsIgnorePattern: '^_'
 		}
 	],
+
+	'deprecation/deprecation': 'error',
 
 	'no-useless-constructor': 'off',
 	'@typescript-eslint/no-useless-constructor': 'error',
@@ -302,10 +313,7 @@ module.exports = {
 		}
 	],
 
-	'keyword-spacing': 'off',
-
 	// Debug
-
 	'no-console': 'error',
 	'no-alert': 'error',
 	'no-debugger': 'error'

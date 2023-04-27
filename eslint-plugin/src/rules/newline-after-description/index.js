@@ -1,7 +1,11 @@
 const {default: iterateJsdoc} = require('eslint-plugin-jsdoc/dist/iterateJsdoc');
 
+//------------------------------------------------------------------------------
+// Rule Definition
+//------------------------------------------------------------------------------
+
 /**
- * Rules for check newline after description
+ * Rule for check newline after description in jsdoc
  */
 const newlineAfterDescription = iterateJsdoc(({
 	sourceCode,
@@ -23,7 +27,7 @@ const newlineAfterDescription = iterateJsdoc(({
 		sourceLines = sourceCode.getText(jsdocNode).split('\n');
 
 	if (isMultipleTags || isDescriptionMultiline) {
-		if (!descriptionEndsWithANewline) {
+		if (jsdoc.tags > 0 && !descriptionEndsWithANewline) {
 			report('There must be a newline after the description of the JSDoc block.', (fixer) => {
 				// Add the new line
 				const injectedLine = `${indent} *${sourceLines[lastDescriptionLine].endsWith('\r') ? '\r' : ''}`;
@@ -80,4 +84,4 @@ function checkDescriptionMultiline(description, descriptionEndsWithANewline) {
 	return /\n\r?/u.test(testValue);
 }
 
-module.exports = {newlineAfterDescription};
+module.exports = newlineAfterDescription;
