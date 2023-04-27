@@ -119,6 +119,14 @@ const baseSettings = {
 		throws: {
 			name: 'throws',
 			required: ['namepath-referencing']
+		},
+		see: {
+			name: 'namepath-referencing',
+			required: ['namepath-referencing']
+		},
+		link: {
+			name: 'namepath-referencing',
+			required: ['namepath-referencing']
 		}
 	}
 };
