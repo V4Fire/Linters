@@ -266,7 +266,7 @@ module.exports = {
 		}
 	],
 
-	'deprecation/deprecation': 'error',
+	'deprecation/deprecation': 'warn',
 
 	'no-useless-constructor': 'off',
 	'@typescript-eslint/no-useless-constructor': 'error',

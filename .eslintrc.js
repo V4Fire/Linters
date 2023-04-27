@@ -92,11 +92,8 @@ module.exports = {
 					typescript: {
 						alwaysTryTypes: true
 					},
-
-					'import/resolver': {
-						node: {
-							extensions: ['.js', '.ts']
-						}
+					node: {
+						extensions: ['.js', '.ts']
 					}
 				},
 

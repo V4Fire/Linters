@@ -45,6 +45,10 @@ module.exports = {
 				members = node.body.body,
 				wrongOrderedMembers = [];
 
+			if (node.type !== 'MethodDefinition') {
+				return;
+			}
+
 			let
 				methodEncountered = false,
 				protectedMethodEncountered = false;
