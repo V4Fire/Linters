@@ -110,24 +110,7 @@ const baseSettings = {
 
 	tagNamePreference: {
 		fires: 'emits',
-		return: 'returns',
-		inheritDoc: false,
-		override: false
-	},
-
-	structuredTags: {
-		throws: {
-			name: 'throws',
-			required: ['namepath-referencing']
-		},
-		see: {
-			name: 'namepath-referencing',
-			required: ['namepath-referencing']
-		},
-		link: {
-			name: 'namepath-referencing',
-			required: ['namepath-referencing']
-		}
+		return: 'returns'
 	}
 };
 
@@ -145,7 +128,12 @@ module.exports = {
 
 module.exports.settings.ts = {
 	...baseSettings,
-	mode: 'typescript'
+	mode: 'typescript',
+	tagNamePreference: {
+		...baseSettings.tagNamePreference,
+		override: false,
+		inheritDoc: false
+	}
 };
 
 module.exports.settings.js = {
