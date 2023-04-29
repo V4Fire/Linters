@@ -40,6 +40,10 @@ const newlineAfterDescription = iterateJsdoc(({
 		}
 
 	} else if (descriptionEndsWithANewline) {
+		if (jsdoc.tags.length === 1 && jsdoc.tags[0].source.length > 1) {
+			return;
+		}
+
 		report('There must be no newline after the description of the JSDoc block.', (fixer) => {
 			// Remove the extra line
 			sourceLines.splice(lastDescriptionLine, 1);
