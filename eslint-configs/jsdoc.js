@@ -110,14 +110,8 @@ const baseSettings = {
 
 	tagNamePreference: {
 		fires: 'emits',
-		return: 'returns'
-	},
-
-	structuredTags: {
-		typeParam: {
-			name: 'text',
-			required: 'name'
-		}
+		return: 'returns',
+		property: 'prop'
 	}
 };
 
