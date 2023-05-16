@@ -580,7 +580,11 @@ module.exports = {
 
 	'import/no-named-as-default': 'error',
 	'import/no-named-as-default-member': 'error',
+
+	// Slow rules
 	'import/no-named-default': 'error',
+	'import/no-unused-modules': 'warn',
+	'import/no-deprecated': 'warn',
 
 	'import/no-anonymous-default-export': [
 		'error', {
@@ -594,8 +598,6 @@ module.exports = {
 		}
 	],
 
-	'import/no-deprecated': 'warn',
-	'import/no-unused-modules': 'warn',
 	'import/unambiguous': 'off',
 
 	'import/first': 'error',

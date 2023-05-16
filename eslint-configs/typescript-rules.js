@@ -316,5 +316,10 @@ module.exports = {
 	// Debug
 	'no-console': 'error',
 	'no-alert': 'error',
-	'no-debugger': 'error'
+	'no-debugger': 'error',
+
+	// Import rules
+	'import/named': 'off',
+	'import/default': 'off',
+	'import/namespace': 'off'
 };
