@@ -1,3 +1,11 @@
+/*!
+ * V4Fire Linters
+ * https://github.com/V4Fire/Linters
+ *
+ * Released under the MIT license
+ * https://github.com/V4Fire/Linters/blob/master/LICENSE
+ */
+
 module.exports = {
 	'@typescript-eslint/no-explicit-any': 'off',
 	'@typescript-eslint/no-misused-new': 'error',

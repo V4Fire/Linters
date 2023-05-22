@@ -1,3 +1,11 @@
+/*!
+ * V4Fire Linters
+ * https://github.com/V4Fire/Linters
+ *
+ * Released under the MIT license
+ * https://github.com/V4Fire/Linters/blob/master/LICENSE
+ */
+
 const forbiddenMethods = [
 	'copyWithin',
 	'findLast',

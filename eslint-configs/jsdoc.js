@@ -1,3 +1,11 @@
+/*!
+ * V4Fire Linters
+ * https://github.com/V4Fire/Linters
+ *
+ * Released under the MIT license
+ * https://github.com/V4Fire/Linters/blob/master/LICENSE
+ */
+
 const baseRules = {
 	'jsdoc/check-tag-names': [
 		'error',
@@ -55,7 +63,7 @@ const baseRules = {
 		}
 	],
 
-	'jsdoc/check-indentation': 'error',
+	'jsdoc/check-indentation': 'off',
 	'jsdoc/check-alignment': 'error',
 	'jsdoc/check-line-alignment': 'error',
 	'jsdoc/check-property-names': 'error',

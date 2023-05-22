@@ -1,3 +1,11 @@
+/*!
+ * V4Fire Linters
+ * https://github.com/V4Fire/Linters
+ *
+ * Released under the MIT license
+ * https://github.com/V4Fire/Linters/blob/master/LICENSE
+ */
+
 module.exports = {
 	'playwright/max-nested-describe': ['warn', {max: 5}],
 	'playwright/missing-playwright-await': ['error'],
