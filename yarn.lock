@@ -1472,6 +1472,7 @@ __metadata:
     eslint: 8.38.0
     eslint-import-resolver-typescript: 3.5.5
     eslint-plugin-deprecation: 1.4.1
+    eslint-plugin-header: 3.1.1
     eslint-plugin-import: 2.27.5
     eslint-plugin-jsdoc: 40.1.2
     eslint-plugin-optimize-regex: 1.2.1
@@ -2677,6 +2678,15 @@ __metadata:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     typescript: ^3.7.5 || ^4.0.0 || ^5.0.0
   checksum: 75c7535d820d1749664705724cc979d706da126a2277f2937467f70156a2c220b10c66670f18226801c9555e4cd02312d353936f14d5752c2d2c648455fe5769
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-header@npm:3.1.1":
+  version: 3.1.1
+  resolution: "eslint-plugin-header@npm:3.1.1"
+  peerDependencies:
+    eslint: ">=7.7.0"
+  checksum: 2353e4ba011be81d5c27fbd79929e18dce118d7673a2f717b1ac5a0bceb33e06ec9a7c80a01dddc5804df75e2cc8eb475d268cd1abef5eab5088ede62e5ad246
   languageName: node
   linkType: hard
 

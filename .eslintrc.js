@@ -30,7 +30,8 @@ module.exports = {
 		'jsdoc',
 		'@v4fire',
 		'import',
-		'optimize-regex'
+		'optimize-regex',
+		'header'
 	],
 
 	rules: {
