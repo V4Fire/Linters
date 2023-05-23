@@ -34,8 +34,6 @@ const baseRules = {
 				'PropertyDefinition[override=false]',
 				'MethodDefinition[override=false]',
 				'ArrowFunctionExpression',
-				'ClassDeclaration',
-				'ClassExpression',
 				'FunctionDeclaration',
 				'FunctionExpression'
 			]
@@ -44,8 +42,7 @@ const baseRules = {
 	'jsdoc/require-description': [
 		'warn',
 		{
-			checkConstructors: false,
-			exemptedBy: ['inheritdoc', 'link']
+			checkConstructors: false
 		}
 	],
 	'jsdoc/require-param': [
@@ -53,7 +50,12 @@ const baseRules = {
 		{
 			checkSetters: false,
 			checkConstructors: false,
-			checkDestructured: false
+			checkDestructured: false,
+			contexts: [
+				{
+					comment: '*:not(JsdocBlock:has(JsdocInlineTag[tag=link]))'
+				}
+			]
 		}
 	],
 	'jsdoc/check-param-names': [
@@ -78,11 +80,12 @@ const baseRules = {
 	'jsdoc/no-undefined-types': 'error',
 	'jsdoc/require-asterisk-prefix': 'error',
 	'jsdoc/require-param-name': 'error',
-	'jsdoc/require-property': 'error',
-	'jsdoc/require-property-name': 'warn',
-	'jsdoc/require-property-type': 'warn',
 
-	'jsdoc/require-property-description': 'warn',
+	'jsdoc/require-property': 'off',
+	'jsdoc/require-property-name': 'off',
+	'jsdoc/require-property-type': 'off',
+	'jsdoc/require-property-description': 'off',
+
 	'jsdoc/require-hyphen-before-param-description': 'warn',
 	'jsdoc/require-throws': 'warn',
 
