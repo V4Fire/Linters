@@ -31,8 +31,8 @@ const baseRules = {
 			publicOnly: true,
 			checkConstructors: false,
 			contexts: [
+				'MethodDefinition[value.type = "FunctionExpression"][override=false]:not(MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"] + MethodDefinition)',
 				'PropertyDefinition[override=false]',
-				'MethodDefinition[override=false]',
 				'ArrowFunctionExpression',
 				'FunctionDeclaration',
 				'FunctionExpression'
@@ -143,8 +143,7 @@ module.exports.settings.ts = {
 	mode: 'typescript',
 	tagNamePreference: {
 		...baseSettings.tagNamePreference,
-		override: false,
-		inheritDoc: false
+		override: false
 	}
 };
 
