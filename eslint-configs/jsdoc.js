@@ -24,18 +24,24 @@ const baseRules = {
 		}
 	],
 
-	'jsdoc/require-jsdoc': [
+	'@v4fire/require-jsdoc': [
 		'warn',
 		{
 			exemptEmptyFunctions: true,
 			publicOnly: true,
 			checkConstructors: false,
-			contexts: [
-				'MethodDefinition[value.type = "FunctionExpression"][override=false]:not(MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"] + MethodDefinition)',
-				'PropertyDefinition[override=false]',
+			require: [
 				'ArrowFunctionExpression',
 				'FunctionDeclaration',
-				'FunctionExpression'
+				'FunctionExpression',
+				'PropertyDefinition',
+				'MethodDefinition'
+			],
+			ignore: [
+				'MethodDefinition[override=true]',
+				'PropertyDefinition[override=true]',
+				'TSDeclareFunction + FunctionDeclaration',
+				'MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"] + MethodDefinition'
 			]
 		}
 	],
