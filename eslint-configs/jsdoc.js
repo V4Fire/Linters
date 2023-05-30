@@ -30,18 +30,19 @@ const baseRules = {
 			exemptEmptyFunctions: true,
 			publicOnly: true,
 			checkConstructors: false,
-			require: [
+			contexts: [
 				'ArrowFunctionExpression',
 				'FunctionDeclaration',
 				'FunctionExpression',
 				'PropertyDefinition',
-				'MethodDefinition'
+				'MethodDefinition',
+				'PropertyDefinition'
 			],
 			ignore: [
 				'MethodDefinition[override=true]',
 				'PropertyDefinition[override=true]',
 				'TSDeclareFunction + FunctionDeclaration',
-				'MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"] + MethodDefinition'
+				'MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"] + MethodDefinition[value.type = "FunctionExpression"]'
 			]
 		}
 	],
@@ -110,8 +111,8 @@ const baseRules = {
 	'jsdoc/require-description-complete-sentence': 'off',
 	'jsdoc/require-example': 'off',
 	'jsdoc/require-file-overview': 'off',
-	'jsdoc/require-param-description': 'off',
 	'jsdoc/require-param-type': 'off',
+	'jsdoc/require-param-description': 'warn',
 	'jsdoc/require-returns': 'off',
 	'jsdoc/require-returns-description': 'off',
 	'jsdoc/require-returns-check': 'off',
