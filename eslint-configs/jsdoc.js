@@ -37,10 +37,7 @@ const baseRules = {
 				'TSDeclareFunction',
 				'PropertyDefinition',
 				'MethodDefinition',
-				'PropertyDefinition',
-				{
-					comment: '*:not(JsdocBlock:has(JsdocTag[tag=type]))'
-				}
+				'PropertyDefinition'
 			],
 			ignore: [
 				'MethodDefinition[override=true]',
