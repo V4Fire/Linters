@@ -34,14 +34,21 @@ const baseRules = {
 				'ArrowFunctionExpression',
 				'FunctionDeclaration',
 				'FunctionExpression',
+				'TSDeclareFunction',
 				'PropertyDefinition',
 				'MethodDefinition',
-				'PropertyDefinition'
+				'PropertyDefinition',
+				{
+					comment: '*:not(JsdocBlock:has(JsdocTag[tag=type]))'
+				}
 			],
 			ignore: [
 				'MethodDefinition[override=true]',
 				'PropertyDefinition[override=true]',
 				'TSDeclareFunction + FunctionDeclaration',
+				'TSDeclareFunction + TSDeclareFunction',
+				'ExportNamedDeclaration[declaration.type = "TSDeclareFunction"] + ExportNamedDeclaration[declaration.type = "FunctionDeclaration"]',
+				'MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"] + MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"]',
 				'MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"] + MethodDefinition[value.type = "FunctionExpression"]'
 			]
 		}
@@ -49,7 +56,13 @@ const baseRules = {
 	'jsdoc/require-description': [
 		'warn',
 		{
-			checkConstructors: false
+			checkConstructors: false,
+			exemptedBy: ['typedef'],
+			contexts: [
+				{
+					comment: '*:not(JsdocBlock:has(JsdocInlineTag[tag=link]))'
+				}
+			]
 		}
 	],
 	'jsdoc/require-param': [

@@ -88,7 +88,7 @@ module.exports = {
 	'@v4fire/unbound-method': [
 		'warn', {
 			ignoreStatic: true,
-			ignore: ['Object', 'Number', 'String', 'RegExp']
+			ignore: ['Object', 'Number', 'String', 'RegExp', 'Function']
 		}
 	],
 
