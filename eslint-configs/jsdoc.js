@@ -122,7 +122,7 @@ const baseRules = {
 	'jsdoc/require-example': 'off',
 	'jsdoc/require-file-overview': 'off',
 	'jsdoc/require-param-type': 'off',
-	'jsdoc/require-param-description': 'warn',
+	'jsdoc/require-param-description': 'off',
 	'jsdoc/require-returns': 'off',
 	'jsdoc/require-returns-description': 'off',
 	'jsdoc/require-returns-check': 'off',
