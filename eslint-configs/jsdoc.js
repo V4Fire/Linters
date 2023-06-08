@@ -54,7 +54,7 @@ const baseRules = {
 		'warn',
 		{
 			checkConstructors: false,
-			exemptedBy: ['typedef'],
+			exemptedBy: ['typedef', 'inheritDoc'],
 			contexts: [
 				{
 					comment: '*:not(JsdocBlock:has(JsdocInlineTag[tag=link]))'
@@ -84,7 +84,7 @@ const baseRules = {
 
 	'jsdoc/check-indentation': 'off',
 	'jsdoc/check-alignment': 'error',
-	'jsdoc/check-line-alignment': 'error',
+	'jsdoc/check-line-alignment': 'off',
 	'jsdoc/check-property-names': 'error',
 	'jsdoc/check-syntax': 'error',
 	'jsdoc/check-types': 'error',
