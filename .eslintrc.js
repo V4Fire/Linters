@@ -13,7 +13,8 @@ const
 	restrictedSyntax = require('./eslint-configs/restricted-syntax'),
 	globalRules = require('./eslint-configs/global-rules'),
 	testsRules = require('./eslint-configs/tests-rules'),
-	typescriptRules = require('./eslint-configs/typescript-rules');
+	typescriptRules = require('./eslint-configs/typescript-rules'),
+	storybookRules = require('./eslint-configs/storybook-rules');
 
 module.exports = {
 	env: {
@@ -106,6 +107,26 @@ module.exports = {
 				...jsdoc.rules.ts,
 				...restrictedSyntax,
 				...testsRules
+			}
+		},
+
+		{
+			files: ['*.stories.@(ts|js|mjs|cjs)', '*.story.@(ts|js|mjs|cjs)'],
+
+			plugins: ['storybook'],
+
+			rules: {
+				...storybookRules
+			}
+		},
+
+		{
+			files: ['.storybook/main.@(js|cjs|mjs|ts)'],
+
+			plugins: ['storybook'],
+
+			rules: {
+				'storybook/no-uninstalled-addons': 'error'
 			}
 		}
 	]
