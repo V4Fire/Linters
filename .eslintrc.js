@@ -16,118 +16,128 @@ const
 	typescriptRules = require('./eslint-configs/typescript-rules'),
 	storybookRules = require('./eslint-configs/storybook-rules');
 
-module.exports = {
-	env: {
-		browser: true,
-		es2021: true
-	},
-
-	parserOptions: {
-		sourceType: 'module',
-		ecmaVersion: 'latest'
-	},
-
-	plugins: [
-		'jsdoc',
-		'@v4fire',
-		'import',
-		'optimize-regex',
-		'header'
-	],
-
-	rules: {
-		...globalRules
-	},
-
-	overrides: [
-		{
-			files: [
-				'./*.js',
-				'./lib/**/*.js',
-				'./build/**/*.js',
-				'./config/**/*.js'
-			],
-
-			env: {
-				node: true,
-				es2021: true
-			},
-
-			parserOptions: {
-				sourceType: 'script',
-				ecmaVersion: 'latest'
-			},
-
-			rules: {
-				...jsdoc.rules.js,
-
-				'import/no-nodejs-modules': 'off',
-				'import/order': 'off'
-			},
-
-			settings: {
-				jsdoc: jsdoc.settings.js
-			}
+module.exports = function getESLintConfig(config) {
+	const eslintConfig = {
+		env: {
+			browser: true,
+			es2021: true
 		},
 
-		{
-			files: ['*.ts'],
-			parser: '@typescript-eslint/parser',
+		parserOptions: {
+			sourceType: 'module',
+			ecmaVersion: 'latest'
+		},
 
-			plugins: [
-				'@typescript-eslint',
-				'deprecation',
-				'playwright'
-			],
+		plugins: [
+			'jsdoc',
+			'@v4fire',
+			'import',
+			'optimize-regex'
+		],
 
-			extends: ['plugin:@typescript-eslint/recommended'],
+		rules: {
+			...globalRules
+		},
 
-			parserOptions: {
-				project: 'tsconfig.json',
-				tsconfigRootDir: '.',
-				sourceType: 'module',
-				ecmaVersion: 'latest'
-			},
+		overrides: [
+			{
+				files: [
+					'./*.js',
+					'./lib/**/*.js',
+					'./build/**/*.js',
+					'./config/**/*.js'
+				],
 
-			settings: {
-				'import/resolver': {
-					typescript: {
-						alwaysTryTypes: true
-					},
-					node: {
-						extensions: ['.js', '.ts']
-					}
+				env: {
+					node: true,
+					es2021: true
 				},
 
-				jsdoc: jsdoc.settings.ts
+				parserOptions: {
+					sourceType: 'script',
+					ecmaVersion: 'latest'
+				},
+
+				rules: {
+					...jsdoc.rules.js,
+
+					'import/no-nodejs-modules': 'off',
+					'import/order': 'off'
+				},
+
+				settings: {
+					jsdoc: jsdoc.settings.js
+				}
 			},
+		]
+	}
 
-			rules: {
-				...typescriptRules,
-				...jsdoc.rules.ts,
-				...restrictedSyntax,
-				...testsRules
+	if (config.typescript) {
+		eslintConfig.overrides.push(
+			{
+				files: ['*.ts'],
+				parser: '@typescript-eslint/parser',
+
+				plugins: [
+					'@typescript-eslint',
+					'deprecation',
+					'playwright'
+				],
+
+				extends: ['plugin:@typescript-eslint/recommended'],
+
+				parserOptions: {
+					project: 'tsconfig.json',
+					tsconfigRootDir: '.',
+					sourceType: 'module',
+					ecmaVersion: 'latest'
+				},
+
+				settings: {
+					'import/resolver': {
+						typescript: {
+							alwaysTryTypes: true
+						},
+						node: {
+							extensions: ['.js', '.ts']
+						}
+					},
+
+					jsdoc: jsdoc.settings.ts
+				},
+
+				rules: {
+					...typescriptRules,
+					...jsdoc.rules.ts,
+					...restrictedSyntax,
+					...testsRules
+				}
 			}
-		},
+		)
+	}
 
-		{
-			files: ['*.stories.@(ts|js|mjs|cjs)', '*.story.@(ts|js|mjs|cjs)'],
+	if (config.storybook) {
+		eslintConfig.overrides.push(
+			{
+				files: ['*.stories.@(ts|js|mjs|cjs)', '*.story.@(ts|js|mjs|cjs)'],
 
-			plugins: ['storybook'],
+				plugins: ['storybook'],
 
-			rules: {
-				...storybookRules
+				rules: {
+					...storybookRules
+				}
+			},
+			{
+				files: ['.storybook/main.@(js|cjs|mjs|ts)'],
+
+				plugins: ['storybook'],
+
+				rules: {
+					'storybook/no-uninstalled-addons': 'error'
+				}
 			}
-		},
+		)
+	}
 
-		{
-			files: ['.storybook/main.@(js|cjs|mjs|ts)'],
-
-			plugins: ['storybook'],
-
-			rules: {
-				'storybook/no-uninstalled-addons': 'error'
-			}
-		}
-	]
+	return eslintConfig
 };

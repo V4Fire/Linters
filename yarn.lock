@@ -1498,9 +1498,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@v4fire/eslint-plugin@npm:1.0.0-alpha.10":
-  version: 1.0.0-alpha.10
-  resolution: "@v4fire/eslint-plugin@npm:1.0.0-alpha.10"
+"@v4fire/eslint-plugin@npm:1.0.0-alpha.11":
+  version: 1.0.0-alpha.11
+  resolution: "@v4fire/eslint-plugin@npm:1.0.0-alpha.11"
   peerDependencies:
     "@es-joy/jsdoccomment": ^0.39
     "@typescript-eslint/eslint-plugin": ^5
@@ -1510,7 +1510,7 @@ __metadata:
     jest: ^29
     jest-runner-eslint: ^2
     typescript: ^4
-  checksum: 1ca0edea6c0ba417a6374fa34e2b3eb87421484cb5eb37d2b429737d237c76abb740103ee1cb5c4a1a3973c413cf1145a2b2b974849f816dc573de2af6d6becd
+  checksum: 38ba4839f14a6e91b76b7ae696e13258fa7944f2498554b93ab6a1295b70f16ef44751ea0f204eec2641a4925f450de7623760770f325d88494f8ca09a3e6e75
   languageName: node
   linkType: hard
 
@@ -1524,7 +1524,7 @@ __metadata:
     "@statoscope/stats-validator-reporter-console": 5.22.0
     "@typescript-eslint/eslint-plugin": 5.57.1
     "@typescript-eslint/parser": 5.57.1
-    "@v4fire/eslint-plugin": 1.0.0-alpha.10
+    "@v4fire/eslint-plugin": 1.0.0-alpha.11
     "@v4fire/typescript-check": 1.4.2
     eslint: 8.38.0
     eslint-import-resolver-typescript: 3.5.5
@@ -1544,6 +1544,9 @@ __metadata:
     jest: ^29.5.0
     jest-runner-eslint: ^2.0.0
     typescript: ^4.4.4
+  peerDependenciesMeta:
+    typescript:
+      optional: true
   languageName: unknown
   linkType: soft
 

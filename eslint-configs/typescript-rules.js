@@ -236,6 +236,7 @@ module.exports = {
 	'@typescript-eslint/lines-between-class-members': ['error', {exceptAfterSingleLine: true, exceptAfterOverload: true}],
 
 	'keyword-spacing': 'off',
+	'@v4fire/keyword-spacing': 'error',
 
 	'no-array-constructor': 'off',
 	'@typescript-eslint/no-array-constructor': 'error',

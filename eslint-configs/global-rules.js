@@ -299,7 +299,7 @@ module.exports = {
 		'error', {
 			before: false,
 			after: true,
-			method: {before: false, after: false}
+			method: {before: true, after: false}
 		}
 	],
 

@@ -23,7 +23,6 @@ const baseRules = {
 			]
 		}
 	],
-
 	'@v4fire/require-jsdoc': [
 		'warn',
 		{
@@ -107,6 +106,8 @@ const baseRules = {
 	'jsdoc/require-throws': 'warn',
 
 	'@v4fire/newline-after-description': 'error',
+	'@v4fire/format-description': 'error',
+	'@v4fire/format-param-description': 'error',
 
 	'jsdoc/check-access': 'off',
 	'jsdoc/implements-on-classes': 'off',
