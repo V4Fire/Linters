@@ -83,7 +83,6 @@ module.exports = {
 	'@typescript-eslint/explicit-member-accessibility': 'off',
 	'@typescript-eslint/class-literal-property-style': 'off',
 	'@typescript-eslint/no-extraneous-class': 'error',
-	'@typescript-eslint/no-parameter-properties': 'error',
 
 	'@v4fire/unbound-method': [
 		'warn', {
@@ -99,7 +98,6 @@ module.exports = {
 	'@typescript-eslint/no-unnecessary-qualifier': 'error',
 	'@typescript-eslint/prefer-namespace-keyword': 'error',
 	'@typescript-eslint/no-require-imports': 'off',
-	'@typescript-eslint/no-duplicate-imports': 'error',
 	'@typescript-eslint/no-var-requires': 'error',
 
 	'@typescript-eslint/prefer-as-const': 'error',
@@ -233,7 +231,10 @@ module.exports = {
 	'@typescript-eslint/init-declarations': 'off',
 
 	'lines-between-class-members': 'off',
-	'@typescript-eslint/lines-between-class-members': ['error', {exceptAfterSingleLine: true, exceptAfterOverload: true}],
+	'@typescript-eslint/lines-between-class-members': [
+		'error',
+		{exceptAfterOverload: true}
+	],
 
 	'keyword-spacing': 'off',
 	'@v4fire/keyword-spacing': 'error',
