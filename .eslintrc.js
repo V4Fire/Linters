@@ -92,7 +92,7 @@ module.exports = function getESLintConfig(config) {
 				extends: ['plugin:@typescript-eslint/recommended'],
 
 				parserOptions: {
-					project: 'tsconfig.json',
+					project: true,
 					tsconfigRootDir: '.',
 					sourceType: 'module',
 					ecmaVersion: 'latest'
