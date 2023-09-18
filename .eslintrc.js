@@ -72,6 +72,11 @@ module.exports = function getESLintConfig(config) {
 		]
 	}
 
+	if (config.header) {
+		eslintConfig.plugins.push('header');
+		eslintConfig.rules['header/header'] = config.header;
+	}
+
 	if (config.typescript) {
 		eslintConfig.overrides.push(
 			{
