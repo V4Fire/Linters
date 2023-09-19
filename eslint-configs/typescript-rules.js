@@ -91,6 +91,8 @@ module.exports = {
 		}
 	],
 
+	'@typescript-eslint/triple-slash-reference': 'error',
+
 	'@typescript-eslint/prefer-readonly': 'error',
 	'@typescript-eslint/prefer-readonly-parameter-types': 'off',
 
@@ -231,10 +233,7 @@ module.exports = {
 	'@typescript-eslint/init-declarations': 'off',
 
 	'lines-between-class-members': 'off',
-	'@typescript-eslint/lines-between-class-members': [
-		'error',
-		{exceptAfterOverload: true}
-	],
+	// '@typescript-eslint/lines-between-class-members': 'error',
 
 	'keyword-spacing': 'off',
 	'@v4fire/keyword-spacing': 'error',
@@ -331,5 +330,8 @@ module.exports = {
 	// Import rules
 	'import/named': 'off',
 	'import/default': 'off',
-	'import/namespace': 'off'
+	'import/namespace': 'off',
+	'import/no-named-as-default-member': 'off',
+
+	'import/no-nodejs-modules': 'warn'
 };

@@ -8,8 +8,21 @@
  * https://github.com/V4Fire/Linters/blob/master/LICENSE
  */
 
+const eslintGlobals = require('globals');
+
+const 
+	tsPlugin = require('@typescript-eslint/eslint-plugin'),
+	jsdoc = require('eslint-plugin-jsdoc'),
+	importPlugin = require('eslint-plugin-import'),
+	optimizeRegexPlugin = require('eslint-plugin-optimize-regex'),
+	playwrightPlugin = require('eslint-plugin-playwright'),
+	deprecationPlugin = require('eslint-plugin-deprecation'),
+	storybookPlugin = require('eslint-plugin-storybook'),
+	v4firePlugin = require('@v4fire/eslint-plugin');
+
 const
-	jsdoc = require('./eslint-configs/jsdoc'),
+	jsdocConfig = require('./eslint-configs/jsdoc'),
+	typescriptEslintParser = require('@typescript-eslint/parser'),
 	restrictedSyntax = require('./eslint-configs/restricted-syntax'),
 	globalRules = require('./eslint-configs/global-rules'),
 	testsRules = require('./eslint-configs/tests-rules'),
@@ -18,62 +31,73 @@ const
 
 const
 	languageOptions = {
-		ecmaVersion: 'latest',
-		sourceType: 'module'
+		ecmaVersion: 'latest'
 	},
-	plugins = [
-		'jsdoc',
-		'@v4fire',
-		'import',
-		'optimize-regex'
-	];
+	plugins = {
+		jsdoc,
+		'@v4fire': v4firePlugin,
+		import: importPlugin,
+		'optimize-regex': optimizeRegexPlugin
+	},
+	linterOptions = {
+		reportUnusedDisableDirectives: true
+	};
 
 module.exports = [
 	{
 		files: [
-			'./*.js',
-			'./lib/**/*.js',
-			'./build/**/*.js',
-			'./config/**/*.js'
+			'**/*.js'
 		],
-		languageOptions,
+		languageOptions: {
+			...languageOptions,
+			sourceType: 'commonjs',
+			globals: {
+				...eslintGlobals.node
+			}
+		},
 		plugins,
 		rules: {
 			...globalRules,
-			...jsdoc.rules.js,
+			...jsdocConfig.rules.js,
 
 			'import/no-nodejs-modules': 'off',
 			'import/order': 'off'
 		},
+		linterOptions,
 		settings: {
-			jsdoc: jsdoc.settings.js
+			jsdoc: jsdocConfig.settings.js
 		}
 	},
 	{
-		files: ['*.ts'],
+		files: ['**/*.ts'],
 		languageOptions: {
 			...languageOptions,
-			parser: '@typescript-eslint/parser',
+			parser: typescriptEslintParser,
+			sourceType: 'module',
 			parserOptions: {
 				project: true,
 				tsconfigRootDir: '.',
 				sourceType: 'module',
 				ecmaVersion: 'latest'
+			},
+			globals: {
+				...eslintGlobals.browser
 			}
 		},
-		plugins: [
+		plugins: {
 			...plugins,
-			'@typescript-eslint',
-			'deprecation',
-			'playwright'
-		],
+      '@typescript-eslint': tsPlugin,
+			deprecation: deprecationPlugin,
+			playwright: playwrightPlugin
+		},
 		rules: {
 			...globalRules,
 			...typescriptRules,
-			...jsdoc.rules.ts,
+			...jsdocConfig.rules.ts,
 			...restrictedSyntax,
 			...testsRules
 		},
+		linterOptions,
 		settings: {
 			'import/resolver': {
 				typescript: {
@@ -84,19 +108,23 @@ module.exports = [
 				}
 			},
 
-			jsdoc: jsdoc.settings.ts
+			jsdoc: jsdocConfig.settings.ts
 		}
 	},
 	{
 		files: ['*.stories.@(ts|js|mjs|cjs)', '*.story.@(ts|js|mjs|cjs)'],
-		plugins: ['storybook'],
+		plugins: {
+			storybook: storybookPlugin
+		},
 		rules: {
 			...storybookRules
 		}
 	},
 	{
 		files: ['.storybook/main.@(js|cjs|mjs|ts)'],
-		plugins: ['storybook'],
+		plugins: {
+			storybook: storybookPlugin
+		},
 		rules: {
 			'storybook/no-uninstalled-addons': 'error'
 		}

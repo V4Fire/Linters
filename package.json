@@ -25,6 +25,9 @@
   "scripts": {
     "test:eslint": "npx jest --config jest-eslint.config.js"
   },
+  "resolutions": {
+    "globals": "13.19.0"
+  },
   "dependencies": {
     "@babel/helper-validator-identifier": "7.18.6",
     "@eslint/eslintrc": "1.3.0",

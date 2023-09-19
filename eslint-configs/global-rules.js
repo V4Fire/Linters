@@ -572,16 +572,12 @@ module.exports = {
 	'import/no-useless-path-segments': 'error',
 	'import/no-self-import': 'error',
 	'import/no-internal-modules': 'off',
-	'import/no-nodejs-modules': 'warn',
 
 	'import/no-commonjs': 'off',
 	'import/no-dynamic-require': 'off',
 	'import/no-webpack-loader-syntax': 'off',
 	'import/no-amd': 'error',
 
-	'import/named': 'error',
-	'import/default': 'error',
-	'import/namespace': 'error',
 	'import/no-unassigned-import': 'off',
 
 	'import/export': 'error',
@@ -589,13 +585,13 @@ module.exports = {
 	'import/no-named-export': 'off',
 	'import/group-exports': 'off',
 
-	'import/no-named-as-default': 'error',
-	'import/no-named-as-default-member': 'error',
-
-	// Slow rules
 	'import/no-named-default': 'error',
-	'import/no-unused-modules': 'warn',
-	'import/no-deprecated': 'warn',
+	
+	// Slow rules
+	'import/default': 'error',
+	'import/named': 'error',
+	'import/namespace': 'error',
+	'import/no-named-as-default-member': 'error',
 
 	'import/no-anonymous-default-export': [
 		'error', {
@@ -619,16 +615,5 @@ module.exports = {
 
 	'import/no-duplicates': 'off',
 	'import/no-namespace': 'off',
-	'import/max-dependencies': 'off',
-
-	'import/extensions': [
-		'error', {
-			js: 'never',
-			jsx: 'never',
-			ts: 'never',
-			tsx: 'never',
-			svg: 'always',
-			json: 'always'
-		}
-	]
+	'import/max-dependencies': 'off'
 };
