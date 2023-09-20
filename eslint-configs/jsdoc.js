@@ -1,3 +1,11 @@
+/*!
+ * V4Fire Linters
+ * https://github.com/V4Fire/Linters
+ *
+ * Released under the MIT license
+ * https://github.com/V4Fire/Linters/blob/master/LICENSE
+ */
+
 const baseRules = {
 	'jsdoc/check-tag-names': [
 		'error',
@@ -15,27 +23,42 @@ const baseRules = {
 			]
 		}
 	],
-
-	'jsdoc/require-jsdoc': [
-		'off',
+	'@v4fire/require-jsdoc': [
+		'warn',
 		{
 			exemptEmptyFunctions: true,
 			publicOnly: true,
+			checkConstructors: false,
 			contexts: [
-				'PropertyDefinition',
 				'ArrowFunctionExpression',
-				'ClassDeclaration',
-				'ClassExpression',
 				'FunctionDeclaration',
 				'FunctionExpression',
-				'MethodDefinition'
+				'TSDeclareFunction',
+				'PropertyDefinition',
+				'MethodDefinition',
+				'PropertyDefinition'
+			],
+			ignore: [
+				'MethodDefinition[override=true]',
+				'PropertyDefinition[override=true]',
+				'TSDeclareFunction + FunctionDeclaration',
+				'TSDeclareFunction + TSDeclareFunction',
+				'ExportNamedDeclaration[declaration.type = "TSDeclareFunction"] + ExportNamedDeclaration[declaration.type = "FunctionDeclaration"]',
+				'MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"] + MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"]',
+				'MethodDefinition[value.type = "TSEmptyBodyFunctionExpression"] + MethodDefinition[value.type = "FunctionExpression"]'
 			]
 		}
 	],
 	'jsdoc/require-description': [
 		'warn',
 		{
-			checkConstructors: false
+			checkConstructors: false,
+			exemptedBy: ['typedef', 'inheritDoc'],
+			contexts: [
+				{
+					comment: '*:not(JsdocBlock:has(JsdocInlineTag[tag=link]))'
+				}
+			]
 		}
 	],
 	'jsdoc/require-param': [
@@ -43,7 +66,12 @@ const baseRules = {
 		{
 			checkSetters: false,
 			checkConstructors: false,
-			checkDestructured: false
+			checkDestructured: false,
+			contexts: [
+				{
+					comment: '*:not(JsdocBlock:has(JsdocInlineTag[tag=link]))'
+				}
+			]
 		}
 	],
 	'jsdoc/check-param-names': [
@@ -53,9 +81,9 @@ const baseRules = {
 		}
 	],
 
-	'jsdoc/check-indentation': 'error',
+	'jsdoc/check-indentation': 'off',
 	'jsdoc/check-alignment': 'error',
-	'jsdoc/check-line-alignment': 'error',
+	'jsdoc/check-line-alignment': 'off',
 	'jsdoc/check-property-names': 'error',
 	'jsdoc/check-syntax': 'error',
 	'jsdoc/check-types': 'error',
@@ -68,14 +96,18 @@ const baseRules = {
 	'jsdoc/no-undefined-types': 'error',
 	'jsdoc/require-asterisk-prefix': 'error',
 	'jsdoc/require-param-name': 'error',
-	'jsdoc/require-property': 'error',
-	'jsdoc/require-property-name': 'warn',
-	'jsdoc/require-property-type': 'warn',
-	'jsdoc/newline-after-description': 'off',
 
-	'jsdoc/require-property-description': 'warn',
+	'jsdoc/require-property': 'off',
+	'jsdoc/require-property-name': 'off',
+	'jsdoc/require-property-type': 'off',
+	'jsdoc/require-property-description': 'off',
+
 	'jsdoc/require-hyphen-before-param-description': 'warn',
 	'jsdoc/require-throws': 'warn',
+
+	'@v4fire/newline-after-description': 'error',
+	'@v4fire/format-description': 'error',
+	'@v4fire/format-param-description': 'error',
 
 	'jsdoc/check-access': 'off',
 	'jsdoc/implements-on-classes': 'off',
@@ -90,8 +122,8 @@ const baseRules = {
 	'jsdoc/require-description-complete-sentence': 'off',
 	'jsdoc/require-example': 'off',
 	'jsdoc/require-file-overview': 'off',
-	'jsdoc/require-param-description': 'off',
 	'jsdoc/require-param-type': 'off',
+	'jsdoc/require-param-description': 'off',
 	'jsdoc/require-returns': 'off',
 	'jsdoc/require-returns-description': 'off',
 	'jsdoc/require-returns-check': 'off',
@@ -107,14 +139,8 @@ const baseSettings = {
 
 	tagNamePreference: {
 		fires: 'emits',
-		return: 'returns'
-	},
-
-	structuredTags: {
-		throws: {
-			name: 'throws',
-			required: ['namepath-referencing']
-		}
+		return: 'returns',
+		property: 'prop'
 	}
 };
 
@@ -132,7 +158,11 @@ module.exports = {
 
 module.exports.settings.ts = {
 	...baseSettings,
-	mode: 'typescript'
+	mode: 'typescript',
+	tagNamePreference: {
+		...baseSettings.tagNamePreference,
+		override: false
+	}
 };
 
 module.exports.settings.js = {

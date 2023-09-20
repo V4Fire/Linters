@@ -1,7 +1,20 @@
+/*!
+ * V4Fire Linters
+ * https://github.com/V4Fire/Linters
+ *
+ * Released under the MIT license
+ * https://github.com/V4Fire/Linters/blob/master/LICENSE
+ */
+
 module.exports = {
 	'@typescript-eslint/no-explicit-any': 'off',
 	'@typescript-eslint/no-misused-new': 'error',
-	'@typescript-eslint/no-invalid-void-type': 'error',
+	'@typescript-eslint/no-invalid-void-type': [
+		'error',
+		{
+			allowAsThisParameter: true
+		}
+	],
 	'@typescript-eslint/no-type-alias': 'off',
 
 	'@typescript-eslint/no-unnecessary-type-arguments': 'off',
@@ -15,7 +28,7 @@ module.exports = {
 	'@typescript-eslint/prefer-nullish-coalescing': 'warn',
 
 	'@typescript-eslint/no-inferrable-types': [
-	'error', {
+		'error', {
 			ignoreParameters: true,
 			ignoreProperties: true
 		}
@@ -23,8 +36,8 @@ module.exports = {
 
 	'@typescript-eslint/array-type': [
 		'error', {
-				default: 'array-simple'
-			}
+			default: 'array-simple'
+		}
 	],
 
 	'@typescript-eslint/no-unnecessary-type-constraint': 'off',
@@ -70,12 +83,15 @@ module.exports = {
 	'@typescript-eslint/explicit-member-accessibility': 'off',
 	'@typescript-eslint/class-literal-property-style': 'off',
 	'@typescript-eslint/no-extraneous-class': 'error',
-	'@typescript-eslint/no-parameter-properties': 'error',
-	'@typescript-eslint/unbound-method': [
+
+	'@v4fire/unbound-method': [
 		'warn', {
-			ignoreStatic: true
+			ignoreStatic: true,
+			ignore: ['Object', 'Number', 'String', 'RegExp', 'Function']
 		}
 	],
+
+	'@typescript-eslint/triple-slash-reference': 'error',
 
 	'@typescript-eslint/prefer-readonly': 'error',
 	'@typescript-eslint/prefer-readonly-parameter-types': 'off',
@@ -84,7 +100,6 @@ module.exports = {
 	'@typescript-eslint/no-unnecessary-qualifier': 'error',
 	'@typescript-eslint/prefer-namespace-keyword': 'error',
 	'@typescript-eslint/no-require-imports': 'off',
-	'@typescript-eslint/no-duplicate-imports': 'error',
 	'@typescript-eslint/no-var-requires': 'error',
 
 	'@typescript-eslint/prefer-as-const': 'error',
@@ -217,11 +232,11 @@ module.exports = {
 	'init-declarations': 'off',
 	'@typescript-eslint/init-declarations': 'off',
 
-	'keyword-spacing': 'off',
-	'@typescript-eslint/keyword-spacing': 'off',
-
 	'lines-between-class-members': 'off',
-	'@typescript-eslint/lines-between-class-members': ['error', {exceptAfterSingleLine: true}],
+	// '@typescript-eslint/lines-between-class-members': 'error',
+
+	'keyword-spacing': 'off',
+	'@v4fire/keyword-spacing': 'error',
 
 	'no-array-constructor': 'off',
 	'@typescript-eslint/no-array-constructor': 'error',
@@ -259,6 +274,8 @@ module.exports = {
 			argsIgnorePattern: '^_'
 		}
 	],
+
+	'deprecation/deprecation': 'warn',
 
 	'no-useless-constructor': 'off',
 	'@typescript-eslint/no-useless-constructor': 'error',
@@ -306,8 +323,15 @@ module.exports = {
 	],
 
 	// Debug
-
 	'no-console': 'error',
 	'no-alert': 'error',
-	'no-debugger': 'error'
+	'no-debugger': 'error',
+
+	// Import rules
+	'import/named': 'off',
+	'import/default': 'off',
+	'import/namespace': 'off',
+	'import/no-named-as-default-member': 'off',
+
+	'import/no-nodejs-modules': 'warn'
 };

@@ -1,3 +1,11 @@
+/*!
+ * V4Fire Linters
+ * https://github.com/V4Fire/Linters
+ *
+ * Released under the MIT license
+ * https://github.com/V4Fire/Linters/blob/master/LICENSE
+ */
+
 module.exports = {
 	// ES spec ESLint rules
 	strict: ['error', 'global'],
@@ -133,6 +141,8 @@ module.exports = {
 	'no-regex-spaces': 'warn',
 	'no-irregular-whitespace': ['error', {skipStrings: true, skipTemplates: true}],
 
+	'optimize-regex/optimize-regex': 'warn',
+
 	// Dead code
 
 	'no-lone-blocks': 'off',
@@ -236,6 +246,9 @@ module.exports = {
 		{blankLine: 'always', prev: 'function', next: '*'},
 		{blankLine: 'always', prev: 'iife', next: '*'},
 		{blankLine: 'always', prev: 'multiline-block-like', next: '*'},
+		{blankLine: 'always', prev: 'multiline-const', next: '*'},
+		{blankLine: 'always', prev: 'multiline-let', next: '*'},
+		{blankLine: 'always', prev: 'multiline-var', next: '*'},
 		{blankLine: 'always', prev: 'multiline-expression', next: '*'},
 		{blankLine: 'always', prev: 'directive', next: '*'},
 		{blankLine: 'always', prev: 'import', next: 'export'},
@@ -250,6 +263,18 @@ module.exports = {
 	'semi-spacing': 'error',
 	'semi-style': 'error',
 
+	indent: [
+		'error', 'tab', {
+			SwitchCase: 1,
+			ignoredNodes: [
+				// Ignore property expression with decorator
+				'FunctionExpression > .params[decorators.length > 0]',
+				'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
+				'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key'
+			],
+			MemberExpression: 1
+		}
+	],
 	'no-multi-spaces': 'error',
 	'no-trailing-spaces': 'error',
 
@@ -260,7 +285,13 @@ module.exports = {
 	'space-before-blocks': 'error',
 	'no-whitespace-before-property': 'error',
 
-	'keyword-spacing': 'off',
+	'keyword-spacing': [
+		'error',
+		{
+			before: true,
+			after: true
+		}
+	],
 
 	'rest-spread-spacing': 'error',
 	'yield-star-spacing': ['error', 'after'],
@@ -268,7 +299,7 @@ module.exports = {
 		'error', {
 			before: false,
 			after: true,
-			method: {before: false, after: false}
+			method: {before: true, after: false}
 		}
 	],
 
@@ -287,7 +318,7 @@ module.exports = {
 	'object-curly-newline': ['error', {consistent: true}],
 	'object-property-newline': ['error', {allowAllPropertiesOnSameLine: true}],
 
-	'enchanted-curly/object-curly-spacing': [
+	'@v4fire/enchanted-curly': [
 		'error', 'never', {
 			multiline: true,
 			import: true,
@@ -376,6 +407,8 @@ module.exports = {
 
 	'lines-between-class-members': 'error',
 
+	'@v4fire/member-order': 'error',
+
 	// Comments
 
 	'no-warning-comments': 'off',
@@ -457,7 +490,8 @@ module.exports = {
 	'no-unused-vars': [
 		'error', {
 			vars: 'all',
-			args: 'after-used'
+			args: 'after-used',
+			argsIgnorePattern: '^_'
 		}
 	],
 
@@ -518,7 +552,7 @@ module.exports = {
 	],
 
 	'max-len': [
-			'error', {
+		'error', {
 			code: 120,
 			tabWidth: 2,
 			ignoreUrls: true,
@@ -531,7 +565,6 @@ module.exports = {
 	// [Import]
 
 	'import/no-unresolved': 'off',
-	// 'import/no-cycle': 'warn',
 
 	'import/no-absolute-path': 'error',
 	'import/no-relative-parent-imports': 'off',
@@ -539,16 +572,12 @@ module.exports = {
 	'import/no-useless-path-segments': 'error',
 	'import/no-self-import': 'error',
 	'import/no-internal-modules': 'off',
-	'import/no-nodejs-modules': 'warn',
 
 	'import/no-commonjs': 'off',
 	'import/no-dynamic-require': 'off',
 	'import/no-webpack-loader-syntax': 'off',
 	'import/no-amd': 'error',
 
-	'import/named': 'error',
-	'import/default': 'error',
-	'import/namespace': 'error',
 	'import/no-unassigned-import': 'off',
 
 	'import/export': 'error',
@@ -556,9 +585,13 @@ module.exports = {
 	'import/no-named-export': 'off',
 	'import/group-exports': 'off',
 
-	'import/no-named-as-default': 'error',
-	'import/no-named-as-default-member': 'error',
 	'import/no-named-default': 'error',
+	
+	// Slow rules
+	'import/default': 'error',
+	'import/named': 'error',
+	'import/namespace': 'error',
+	'import/no-named-as-default-member': 'error',
 
 	'import/no-anonymous-default-export': [
 		'error', {
@@ -572,8 +605,6 @@ module.exports = {
 		}
 	],
 
-	'import/no-deprecated': 'warn',
-	'import/no-unused-modules': 'warn',
 	'import/unambiguous': 'off',
 
 	'import/first': 'error',
@@ -584,16 +615,5 @@ module.exports = {
 
 	'import/no-duplicates': 'off',
 	'import/no-namespace': 'off',
-	'import/max-dependencies': 'off',
-
-	'import/extensions': [
-		'error', {
-			js: 'never',
-			jsx: 'never',
-			ts: 'never',
-			tsx: 'never',
-			svg: 'always',
-			json: 'always'
-		}
-	]
+	'import/max-dependencies': 'off'
 };

@@ -11,6 +11,18 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v2.?.? (2023-??-??)
+
+#### :house: Internal
+
+* Added custom rules from `@v4fire/eslint-plugin`
+* Refactored many rules
+
+### :boom: Breaking Change
+
+* Now .eslintrc.js config returns function with
+* `Typescript` now optional `peerDependency`
+
 ## v2.4.0 (2023-12-04)
 
 #### :house: Internal
