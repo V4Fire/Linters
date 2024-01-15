@@ -11,6 +11,16 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v2.5.0 (2024-01-15)
+
+### :boom: Breaking Change
+
+* Removed `stlint`
+
+#### :house: Internal
+
+* Updated `yarn@4`
+
 ## v2.4.0 (2023-12-04)
 
 #### :house: Internal
