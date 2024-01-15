@@ -38,5 +38,6 @@
   },
   "peerDependencies": {
     "typescript": "^4.4.4"
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
