@@ -411,7 +411,7 @@ module.exports = {
 
 	'capitalized-comments': [
 		'error', 'always', {
-			ignorePattern: '#',
+			ignorePattern: '#|webpack',
 			ignoreConsecutiveComments: true
 		}
 	],

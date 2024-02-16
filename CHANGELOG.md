@@ -11,6 +11,12 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v2.6.0 (2024-02-16)
+
+### :rocket: New Feature
+
+* Ignore webpack magic comments in `capitalized-comments` eslint rule
+
 ## v2.5.0 (2024-01-15)
 
 ### :boom: Breaking Change
@@ -31,7 +37,7 @@ _Note: Gaps between patch versions are faulty, broken or test releases._
 
 #### :house: Internal
 
-* Moved `eslint-plugin-enchanted-curly` dependency on npm 
+* Moved `eslint-plugin-enchanted-curly` dependency on npm
 
 ## v2.2.0 (2023-31-01)
 
