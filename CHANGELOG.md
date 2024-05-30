@@ -11,6 +11,18 @@ Changelog
 
 _Note: Gaps between patch versions are faulty, broken or test releases._
 
+## v2.8.0 (2024-05-30)
+
+### :rocket: New Feature
+
+* Remove restricted syntax rule
+
+## v2.7.0 (2024-03-01)
+
+#### :house: Internal
+
+* Updated statoscope dependencies
+
 ## v2.6.0 (2024-02-16)
 
 ### :rocket: New Feature
