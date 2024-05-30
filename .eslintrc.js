@@ -10,7 +10,6 @@
 
 const
 	jsdoc = require('./eslint-configs/jsdoc'),
-	restrictedSyntax = require('./eslint-configs/restricted-syntax'),
 	globalRules = require('./eslint-configs/global-rules'),
 	typescriptRules = require('./eslint-configs/typescript-rules');
 
@@ -103,11 +102,6 @@ module.exports = {
 
 			rules: {
 				...jsdoc.rules.ts,
-
-				"no-restricted-syntax": [
-					"error",
-					...restrictedSyntax
-				],
 
 				...typescriptRules
 			}
