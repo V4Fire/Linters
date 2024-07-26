@@ -23,7 +23,6 @@ const
 const
 	jsdocConfig = require('./eslint-configs/jsdoc'),
 	typescriptEslintParser = require('@typescript-eslint/parser'),
-	restrictedSyntax = require('./eslint-configs/restricted-syntax'),
 	globalRules = require('./eslint-configs/global-rules'),
 	testsRules = require('./eslint-configs/tests-rules'),
 	typescriptRules = require('./eslint-configs/typescript-rules'),
@@ -94,7 +93,6 @@ module.exports = [
 			...globalRules,
 			...typescriptRules,
 			...jsdocConfig.rules.ts,
-			...restrictedSyntax,
 			...testsRules
 		},
 		linterOptions,

@@ -20,8 +20,36 @@ _Note: Gaps between patch versions are faulty, broken or test releases._
 
 ### :boom: Breaking Change
 
-* Now .eslintrc.js config returns function with
+* Now .eslintrc.js config returns function
 * `Typescript` now optional `peerDependency`
+
+## v2.8.0 (2024-05-30)
+
+### :rocket: New Feature
+
+* Remove restricted syntax rule
+
+## v2.7.0 (2024-03-01)
+
+#### :house: Internal
+
+* Updated statoscope dependencies
+
+## v2.6.0 (2024-02-16)
+
+### :rocket: New Feature
+
+* Ignore webpack magic comments in `capitalized-comments` eslint rule
+
+## v2.5.0 (2024-01-15)
+
+### :boom: Breaking Change
+
+* Removed `stlint`
+
+#### :house: Internal
+
+* Updated `yarn@4`
 
 ## v2.4.0 (2023-12-04)
 
@@ -33,7 +61,7 @@ _Note: Gaps between patch versions are faulty, broken or test releases._
 
 #### :house: Internal
 
-* Moved `eslint-plugin-enchanted-curly` dependency on npm 
+* Moved `eslint-plugin-enchanted-curly` dependency on npm
 
 ## v2.2.0 (2023-31-01)
 
