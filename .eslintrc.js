@@ -74,12 +74,14 @@ module.exports = {
 			parser: "@typescript-eslint/parser",
 
 			plugins: [
+				"compat",
 				"enchanted-curly",
 				"@typescript-eslint",
 				"jsdoc"
 			],
 
 			extends: [
+				"plugin:compat/recommended",
 				"plugin:@typescript-eslint/recommended"
 			],
 
@@ -90,11 +92,19 @@ module.exports = {
 				ecmaVersion: "latest"
 			},
 
+			env: {
+				browser: true
+			},
+
 			settings: {
 				"import/resolver": {
 					typescript: {
 						alwaysTryTypes: true
 					}
+				},
+
+				browserslistOpts: {
+					env: 'legacy'
 				},
 
 				jsdoc: jsdoc.settings.ts
